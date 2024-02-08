@@ -1,0 +1,5 @@
+# Ignore .settings file, bin, target and .idea folder
+/.settings
+/.exe
+/.bin
+/.idea
