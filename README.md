@@ -7,7 +7,15 @@ Download it from here: https://git-scm.com/
 ```bash
 $ git add [name of the file] 
 ```
-#### Add the changes to the commit
+#### Commit the changes
+```bash
+$ git commit -m [Commit description]
+```
+
+#### Push the changes to main
+```bash
+$ git push
+```
 
 ## Compilation
 To compile the projects use the fllowing command
