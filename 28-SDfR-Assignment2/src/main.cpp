@@ -1,8 +1,13 @@
+/*
+ *  Created At: 12-02-2024
+ *  Authors: Miguel Oteo, Alvaro Redondo 
+ */
+
 #include <iostream>
 #include <array>
 #include "../include/header.hpp"
 
-int main()
+int main() // Initializetion of the main loop
 {
     std::array<std::array<char[2], 12>, 12> maze = initMaze();
     std::array<std::array<bool, 12>, 12> visited = initVisited();
