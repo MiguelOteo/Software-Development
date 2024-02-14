@@ -87,6 +87,59 @@ std::array<int, 2> findMazeEntrance(std::array<std::array<char[2], 12>, 12> maze
 } 
 
 /**
+ * @brief Looks the exit in the array of the maze 
+ * 
+ * Iterates over all the border elements of the array of the maze until the 
+ * exit is found, then returns the position in the array. Exit is a valid tale "."
+ * which is located at the border of the square array.
+ * If the entrance is not found the returned values is {-1, -1}
+ * 
+ * Example boder elements:
+ * 
+ *  ##############
+ *  #            #
+ *  #            #
+ *  .            #
+ *  #            #
+ *  ##############
+ * 
+ * @param array<array<char[2],12>,12> maze
+ * @return array<int,2> position
+*/
+std::array<int, 2> findMazeExit(std::array<std::array<char[2], 12>, 12> maze)
+{
+    std::array<int, 2> position = {-1, -1};
+    int row = 0;
+    int column = 0;
+
+    // Move allong all rows
+    for(int row = 0; row < 12; row++)
+    {
+        // If the row is either the first or the last then iterate over all columns
+        if(row == 0 || row == 11) 
+        {
+            for(int column = 0; column < 12; column++)
+            {
+                if(strcmp(maze[row][column],".") == 0)
+                {
+                    position = {row, column};
+                    return position;
+                }
+            }
+        }
+        else // If not then only on the first and last element
+        {
+            if(strcmp(maze[row][0],".") == 0 || strcmp(maze[row][11],".") == 0)
+            {
+                    position = {row, column};
+                    return position;
+            }
+        }
+    } 
+    return position;
+} 
+
+/**
  * @brief Prints the array in the console 
  * 
  * Iterates over all the elements of the array of the maze and prints it
