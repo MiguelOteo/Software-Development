@@ -21,7 +21,6 @@ std::array<std::array<bool, 12>, 12> initVisited();
 bool transverseMaze(std::array<std::array<char[2], 12>, 12>,
                     std::array<std::array<bool, 12>, 12>,
                     std::pair<int, int>,
-                    std::pair<int, int>, 
-                    int);
+                    std::pair<int, int>);
 
 #endif

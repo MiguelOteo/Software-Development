@@ -21,9 +21,7 @@ int main() // Initializetion of the main loop
     // Setup of the exit
     std::pair<int, int> finish = findMazeExit(maze);
 
-    int iteration = 0;
-
-    if(transverseMaze(maze, visited, start, finish, iteration))
+    if(transverseMaze(maze, visited, start, finish))
     {
         std::cout << "Solution found" << std::endl;
     };

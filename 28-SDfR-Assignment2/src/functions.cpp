@@ -159,7 +159,7 @@ void printMaze(std::array<std::array<char[2], 12>, 12> maze)
     {
         for(int column = 0; column < 12; column++)
         {
-            std::cout << maze[row][column];
+            std::cout << maze[row][column] << " ";
         }
         std::cout << "\n";
     }
@@ -167,7 +167,7 @@ void printMaze(std::array<std::array<char[2], 12>, 12> maze)
 }
 
 // Enumerator of the directions in the array form the current position
-const enum Direction
+enum Direction
 {
     UP = -1,    // Move up by subtracting 1 to the row index
     DOWN = 1,   // Move down by adding 1 to the row index
@@ -209,15 +209,13 @@ const enum Direction
  * @param array<array<bool,12>,12> visited
  * @param array<int,2> position
  * @param array<int,2> finish
- * @param int iteration
  * 
  * @return bool Solution found
 */
 bool transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
                     std::array<std::array<bool, 12>, 12> visited,
                     std::pair<int, int> currentPos,
-                    std::pair<int, int> finish,
-                    int iteration)
+                    std::pair<int, int> finish)
 {   
     // Add the char "#" current tile to the maze and print it
     strcpy(maze[currentPos.first][currentPos.second], "x");
@@ -261,7 +259,7 @@ bool transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
             // Verify that the tile is not a wall and that the tile has not been visited
             if (strcmp(nextTile, "#") != 0 && visited[nextRow][nextColumn] == false)
             {
-                if(transverseMaze(maze, visited, {nextRow, nextColumn}, finish, iteration + 1))
+                if(transverseMaze(maze, visited, {nextRow, nextColumn}, finish))
                 {
                     return true;
                 };
