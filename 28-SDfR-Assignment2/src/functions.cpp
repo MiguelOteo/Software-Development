@@ -167,6 +167,17 @@ void printMaze(std::array<std::array<char[2], 12>, 12> maze)
 }
 
 /**
+ * ENumerator of the directions in the array form the current position
+*/
+enum Direction
+{
+    UP = -1,    // Move up by subtracting 1 to the row index
+    DOWN = 1,   // Move down by adding 1 to the row index
+    LEFT = -1,  // Move left by subtracting 1 to the column index
+    RIGHT = 1   // Move right by adding 1 to the column index
+};
+
+/**
  * @brief Solves the maze using recursivity
  * 
  * Algorithm which solves the maze recursivetly by checking the posible 
@@ -176,7 +187,7 @@ void printMaze(std::array<std::array<char[2], 12>, 12> maze)
  * 
  *        .     Top:    Add -1 to the row of the current position
  *      . x .   Bottom: Add +1 to the row of the current position 
- *        .     Left:   Add -1 to the column of the current position
+ *        .     Left:   Add -1 to the cxolumn of the current position
  *              Right:  Add +1 to the column of the current position
  * 
  *  It first marks the current postion as visited in the bool array, this will avoid
@@ -240,7 +251,7 @@ void transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
         char* top = maze[position[0] - 1][position[1]];
 
         // Checks that the new possition is not a wall neither it has been visited before
-        if (strcmp(top, "#") != 0 && visited[position[0] - 1][position[1]] == false)
+        if (strcmp(top, "#") != 0 && visited[position[0] + UP][position[1]] == false)
         {
             std::array<int, 2> nextPosition = {position[0] - 1, position[1]};
             strcpy(maze[position[0]][position[1]], "x");
@@ -256,7 +267,7 @@ void transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
         char* bottom = maze[position[0] + 1][position[1]];
 
         // Checks that the new possition is not a wall neither it has been visited before
-        if (strcmp(bottom, "#") != 0 && visited[position[0] + 1][position[1]] == false)
+        if (strcmp(bottom, "#") != 0 && visited[position[0] + DOWN][position[1]] == false)
         {
             std::array<int, 2> nextPosition = {position[0] + 1, position[1]};
             strcpy(maze[position[0]][position[1]], "x");
@@ -272,7 +283,7 @@ void transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
         char *left = maze[position[0]][position[1] - 1];
 
         // Checks that the new possition is not a wall neither it has been visited before
-        if (strcmp(left, "#") != 0 && visited[position[0]][position[1] - 1] == false)
+        if (strcmp(left, "#") != 0 && visited[position[0]][position[1] + LEFT] == false)
         {
             std::array<int, 2> nextPosition = {position[0], position[1] - 1};
             strcpy(maze[position[0]][position[1]], "x");
@@ -287,7 +298,7 @@ void transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
         // Get new position
         char *right = maze[position[0]][position[1] + 1];
 
-        if (strcmp(right, "#") != 0 && visited[position[0]][position[1] + 1] == false)
+        if (strcmp(right, "#") != 0 && visited[position[0]][position[1] + RIGHT] == false)
         {
             std::array<int, 2> nextPosition = {position[0], position[1] + 1};
             strcpy(maze[position[0]][position[1]], "x");
