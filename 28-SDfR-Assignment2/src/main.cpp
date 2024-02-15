@@ -16,12 +16,15 @@ int main() // Initializetion of the main loop
     std::array<std::array<bool, 12>, 12> visited = initVisited();
 
     // Search for the entrance
-    std::array<int, 2> start = findMazeEntrance(maze);
+    std::pair<int, int> start = findMazeEntrance(maze);
 
     // Setup of the exit
-    std::array<int, 2> finish = findMazeExit(maze);
+    std::pair<int, int> finish = findMazeExit(maze);
 
     int iteration = 0;
 
-    transverseMaze(maze, visited, start, finish, iteration);
+    if(transverseMaze(maze, visited, start, finish, iteration))
+    {
+        std::cout << "Solution found" << std::endl;
+    };
 }

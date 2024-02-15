@@ -12,16 +12,16 @@ std::array<std::array<char[2], 12>, 12> initMaze();
 
 void printMaze(std::array<std::array<char[2], 12>, 12>);
 
-std::array<int, 2> findMazeEntrance(std::array<std::array<char[2], 12>, 12>);
+std::pair<int, int> findMazeEntrance(std::array<std::array<char[2], 12>, 12>);
 
-std::array<int, 2> findMazeExit(std::array<std::array<char[2], 12>, 12>);
+std::pair<int, int> findMazeExit(std::array<std::array<char[2], 12>, 12>);
 
 std::array<std::array<bool, 12>, 12> initVisited();
 
-void transverseMaze(std::array<std::array<char[2], 12>, 12>,
+bool transverseMaze(std::array<std::array<char[2], 12>, 12>,
                     std::array<std::array<bool, 12>, 12>,
-                    std::array<int, 2>,
-                    std::array<int, 2>, 
+                    std::pair<int, int>,
+                    std::pair<int, int>, 
                     int);
 
 #endif

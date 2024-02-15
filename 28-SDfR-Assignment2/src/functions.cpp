@@ -68,15 +68,15 @@ std::array<std::array<bool, 12>, 12> initVisited()
  * @param array<array<char[2],12>,12> maze
  * @return array<int,2> position
 */
-std::array<int, 2> findMazeEntrance(std::array<std::array<char[2], 12>, 12> maze)
+std::pair<int, int> findMazeEntrance(std::array<std::array<char[2], 12>, 12> maze)
 {
-    std::array<int, 2> position = {-1, -1};
+    std::pair<int, int> position = {-1, -1};
 
     for(int row = 0; row < 12; row++)
     {
         for(int column = 0; column < 12; column++)
         {
-            if(strcmp(maze[row][column],"x") == 0)
+            if(strcmp(maze[row][column], "x") == 0)
             {
                 position = {row, column};
                         return position;
@@ -106,9 +106,9 @@ std::array<int, 2> findMazeEntrance(std::array<std::array<char[2], 12>, 12> maze
  * @param array<array<char[2],12>,12> maze
  * @return array<int,2> position
 */
-std::array<int, 2> findMazeExit(std::array<std::array<char[2], 12>, 12> maze)
+std::pair<int, int> findMazeExit(std::array<std::array<char[2], 12>, 12> maze)
 {
-    std::array<int, 2> position = {-1, -1};
+    std::pair<int, int> position = {-1, -1};
     int row = 0;
     int column = 0;
 
@@ -166,8 +166,8 @@ void printMaze(std::array<std::array<char[2], 12>, 12> maze)
     std::cout << "\n";
 }
 
-/**
- * ENumerator of the directions in the array form the current position
+/*
+   Enumerator of the directions in the array form the current position
 */
 enum Direction
 {
@@ -203,107 +203,72 @@ enum Direction
  *  If none of the movements are valid the iteration will finish for that branch 
  *  of the recursive tree
  * 
- *  Solution:
- *      The solution is reach when the current possiton is equal to the exit position
- *      
- *  Failing case:
- *      If the algorithm gets stuck it will stop after 100 iterations
+ *  Possible solutions:
+ *      The solution is reach when the current possiton is equal to the exit position (return true)
+ *      If the last iteration returns false then no solution would have been found
  * 
  * @param array<array<char[2],12>,12> maze
  * @param array<array<bool,12>,12> visited
  * @param array<int,2> position
  * @param array<int,2> finish
  * @param int iteration
+ * 
+ * @return bool Solution found
 */
-void transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
+bool transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
                     std::array<std::array<bool, 12>, 12> visited,
-                    std::array<int, 2> position,
-                    std::array<int, 2> finish,
+                    std::pair<int, int> currentPos,
+                    std::pair<int, int> finish,
                     int iteration)
-{
-    // Break point if iteration reaches 100
-    if (iteration == 100)
-    {
-        std::cout << "Solution could not be found" << std::endl;
-        exit(-1);
-    }
+{   
+    // Add the char "#" current tile to the maze and print it
+    strcpy(maze[currentPos.first][currentPos.second], "x");
+    printMaze(maze);
 
     // Checks of the current position is the exit, if it is exits the program
-    if (position[0] == finish[0] && position[1] == finish[1])
+    if (currentPos.first == finish.first && currentPos.second == finish.second)
     {
-        strcpy(maze[position[0]][position[1]], "x");
-        printMaze(maze);
-        std::cout << "Solution found" << std::endl;
-        exit(0);
+        return true;
     }
-
-    // Sets the current position as visited
-    visited[position[0]][position[1]] = true;
 
     /*
-        Check possible positions around the current positions
-    */ 
+       Next move around current position algrithm
+    */
 
-    // Position on top is current position -1 on the row
-    if (position[0] > 0)
+    // Array of all possible movements from a tile
+    const std::array<std::pair<int, int>, 12> nextPositions = 
+    {{
+        {  UP,     0}, // Move UP    (Current position -1 on the row)
+        {DOWN,     0}, // Move DOWN  (Current position 1 on the row)
+        {   0, LEFT }, // Move LEFT  (Current position -1 on the column)
+        {   0, RIGHT}  // Move RIGHT (Current position 1 on the column)
+    }};
+
+    // Sets the current position as visited
+    visited[currentPos.first][currentPos.second] = true;
+
+    // Iterate over all the possible possitions
+    for (const auto& nextPos: nextPositions) 
     {
-        // Get new position
-        char* top = maze[position[0] - 1][position[1]];
+        // Get the indexes of the nextPosition
+        int nextRow = currentPos.first + nextPos.first;
+        int nextColumn = currentPos.second + nextPos.second;
 
-        // Checks that the new possition is not a wall neither it has been visited before
-        if (strcmp(top, "#") != 0 && visited[position[0] + UP][position[1]] == false)
+        // Check that the new indexes are within the array range
+        if(nextRow < 12 && nextRow >= 0 && nextColumn < 12 && nextColumn >= 0)
         {
-            std::array<int, 2> nextPosition = {position[0] - 1, position[1]};
-            strcpy(maze[position[0]][position[1]], "x");
-            printMaze(maze);
-            transverseMaze(maze, visited, nextPosition, finish, iteration + 1);
+            // Get the next tile char
+            char* nextTile = maze[nextRow][nextColumn];
+
+            // Verify that the tile is not a wall and that the tile has not been visited
+            if (strcmp(nextTile, "#") != 0 && visited[nextRow][nextColumn] == false)
+            {
+                if(transverseMaze(maze, visited, {nextRow, nextColumn}, finish, iteration + 1))
+                {
+                    return true;
+                };
+            }
         }
     }
-
-    // Position on the bottom is current position +1 on the row
-    if (position[0] < 11)
-    {
-        // Get new position
-        char* bottom = maze[position[0] + 1][position[1]];
-
-        // Checks that the new possition is not a wall neither it has been visited before
-        if (strcmp(bottom, "#") != 0 && visited[position[0] + DOWN][position[1]] == false)
-        {
-            std::array<int, 2> nextPosition = {position[0] + 1, position[1]};
-            strcpy(maze[position[0]][position[1]], "x");
-            printMaze(maze);
-            transverseMaze(maze, visited, nextPosition, finish, iteration + 1);
-        }
-    }
-
-    // Position on the left is current position -1 on the columns
-    if (position[1] > 0)
-    {
-        // Get new position
-        char *left = maze[position[0]][position[1] - 1];
-
-        // Checks that the new possition is not a wall neither it has been visited before
-        if (strcmp(left, "#") != 0 && visited[position[0]][position[1] + LEFT] == false)
-        {
-            std::array<int, 2> nextPosition = {position[0], position[1] - 1};
-            strcpy(maze[position[0]][position[1]], "x");
-            printMaze(maze);
-            transverseMaze(maze, visited, nextPosition, finish, iteration + 1);
-        }
-    }
-
-    // Position on the right is current position +1 on the columns
-    if (position[1] < 11)
-    {
-        // Get new position
-        char *right = maze[position[0]][position[1] + 1];
-
-        if (strcmp(right, "#") != 0 && visited[position[0]][position[1] + RIGHT] == false)
-        {
-            std::array<int, 2> nextPosition = {position[0], position[1] + 1};
-            strcpy(maze[position[0]][position[1]], "x");
-            printMaze(maze);
-            transverseMaze(maze, visited, nextPosition, finish, iteration + 1);
-        }
-    }
+    return false;
 }
