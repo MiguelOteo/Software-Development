@@ -167,7 +167,7 @@ void printMaze(std::array<std::array<char[2], 12>, 12> maze)
 }
 
 // Enumerator of the directions in the array form the current position
-enum Direction
+const enum Direction
 {
     UP = -1,    // Move up by subtracting 1 to the row index
     DOWN = 1,   // Move down by adding 1 to the row index
