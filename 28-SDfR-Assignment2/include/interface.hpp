@@ -5,8 +5,8 @@
 
 #include <array>
 
-#ifndef HEADER_H 
-#define HEADER_H
+#ifndef INTERFACE_H 
+#define INTERFACE_H
 
 std::array<std::array<char[2], 12>, 12> initMaze();
 

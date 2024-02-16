@@ -7,7 +7,8 @@
 #include <array>
 #include <string.h>
 #include <windows.h> 
-#include "../include/header.hpp"
+#include "../include/interface.hpp"
+#include "../include/enumerators.hpp"
 
 /**
  * @brief Initializes the maze array with the maze pattern
@@ -70,7 +71,7 @@ std::array<std::array<bool, 12>, 12> initVisited()
 */
 std::pair<int, int> findMazeEntrance(std::array<std::array<char[2], 12>, 12> maze)
 {
-    std::pair<int, int> position = {-1, -1};
+    std::pair<int, int> position = {NOT_FOUND, NOT_FOUND};
 
     for(int row = 0; row < 12; row++)
     {
@@ -108,7 +109,7 @@ std::pair<int, int> findMazeEntrance(std::array<std::array<char[2], 12>, 12> maz
 */
 std::pair<int, int> findMazeExit(std::array<std::array<char[2], 12>, 12> maze)
 {
-    std::pair<int, int> position = {-1, -1};
+    std::pair<int, int> position = {NOT_FOUND, NOT_FOUND};
     int row = 0;
     int column = 0;
 
@@ -166,15 +167,6 @@ void printMaze(std::array<std::array<char[2], 12>, 12> maze)
     std::cout << "\n";
 }
 
-// Enumerator of the directions in the array form the current position
-enum Direction
-{
-    UP = -1,    // Move up by subtracting 1 to the row index
-    DOWN = 1,   // Move down by adding 1 to the row index
-    LEFT = -1,  // Move left by subtracting 1 to the column index
-    RIGHT = 1   // Move right by adding 1 to the column index
-};
-
 /**
  * @brief Solves the maze using recursivity
  * 
@@ -224,7 +216,7 @@ bool transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
     // Checks of the current position is the exit, if it is exits the program
     if (currentPos.first == finish.first && currentPos.second == finish.second)
     {
-        return true;
+        return SOLUTION_FOUND;
     }
 
     /*
@@ -261,10 +253,10 @@ bool transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
             {
                 if(transverseMaze(maze, visited, {nextRow, nextColumn}, finish))
                 {
-                    return true;
+                    return SOLUTION_FOUND;
                 };
             }
         }
     }
-    return false;
+    return SOLUTION_NOT_FOUND;
 }
