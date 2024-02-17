@@ -242,21 +242,25 @@ bool transverseMaze(std::array<std::array<char[2], 12>, 12> maze,
         int nextRow = currentPos.first + nextPos.first;
         int nextColumn = currentPos.second + nextPos.second;
 
-        // Check that the new indexes are within the array range
-        if(nextRow < 12 && nextRow >= 0 && nextColumn < 12 && nextColumn >= 0)
+        // Check that the new indexes are within the array range, if not break
+        if(nextRow >= 12 || nextRow < 0 || nextColumn >= 12 || nextColumn < 0)
         {
-            // Get the next tile char
-            char* nextTile = maze[nextRow][nextColumn];
-
-            // Verify that the tile is not a wall and that the tile has not been visited
-            if (strcmp(nextTile, "#") != 0 && visited[nextRow][nextColumn] == false)
-            {
-                if(transverseMaze(maze, visited, {nextRow, nextColumn}, finish))
-                {
-                    return SOLUTION_FOUND;
-                };
-            }
+            continue;
         }
+
+        // Get the next tile char
+        char* nextTile = maze[nextRow][nextColumn];
+
+        // Verify that the tile is not a wall and that the tile has not been visited
+        if (strcmp(nextTile, "#") == 0 || visited[nextRow][nextColumn] == true)
+        {
+            continue;
+        }
+
+        if(transverseMaze(maze, visited, {nextRow, nextColumn}, finish))
+        {
+            return SOLUTION_FOUND;
+        }; 
     }
     return SOLUTION_NOT_FOUND;
 }
