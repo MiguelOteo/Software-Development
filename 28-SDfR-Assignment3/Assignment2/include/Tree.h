@@ -113,7 +113,7 @@ private:
          return;
       }
 
-      outputTreeHelper(ptr->rightPtr, level + 1); // traverse right subtree
+      outputTreeHelper(ptr->rightPtr, level + 1); // Traverse right subtree
 
       // Indent based on the level
       for (int i = 0; i < level; ++i) 
@@ -121,9 +121,9 @@ private:
          std::cout << "    ";
       }
 
-      std::cout << ptr->data << std::endl; // process node
+      std::cout << ptr->data << std::endl; // Process node
 
-      outputTreeHelper(ptr->leftPtr, level + 1); // traverse left subtree
+      outputTreeHelper(ptr->leftPtr, level + 1); // Traverse left subtree
    }
 
    // utility function called by insertNode; receives a pointer
@@ -134,8 +134,8 @@ private:
       if (*ptr == nullptr) {
          *ptr = new TreeNode<NODETYPE>(value);
       }
-      else { // subtree is not empty
-             // data to insert is less than data in current node
+      else { // Subtree is not empty
+             // Data to insert is less than data in current node
          if (value < (*ptr)->data) {
             insertNodeHelper(&((*ptr)->leftPtr), value);
          }

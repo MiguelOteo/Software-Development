@@ -2,7 +2,6 @@
 // Filename    :  main.cpp
 // Authors     :  Miguel Oteo, Álvaro Redondo
 // Group       :  23
-// License     :  N.A. or opensource license like LGPL
 // Description :  Initialization of the main class
 //==============================================================
 
@@ -11,23 +10,27 @@
 
 int main() // Init of the main loop
 {
+    // Initialization of variables
     List<char> firstList;
     List<char> secondList;
     List<char> thirdList;
     List<char> fourthList;
 
-    firstList = fillList(firstList, "singlylinkedlist");
-    secondList = fillList(secondList, "abcdefg");
+    // Filling the data into the lists
+    fillList(firstList, "singlylinkedlist");
+    fillList(secondList, "abcdefg");
+    fillList(thirdList, "hijklmnop");
+    fillList(fourthList, "qrstuvw");
 
+    // Print the list with the insreted data
     firstList.print();
     secondList.print();
 
-    thirdList = fillList(thirdList, "hijklmnop");
-    fourthList = fillList(fourthList, "qrstuvw");
-
+    // Concatenate the lists 
     secondList.concatenate(thirdList);
     secondList.concatenate(fourthList);
 
+    // Print the list after the concatenation
     secondList.print();
 
     return 0;

@@ -2,11 +2,10 @@
 // Filename    :  functions.hpp
 // Authors     :  Miguel Oteo, Álvaro Redondo
 // Group       :  23
-// License     :  none
 // Description :  Lib of the functions
 //==============================================================
 
-#include "../include/List.h"
+#include "List.h"
 #include <iostream>
 
 #ifndef FUNCTIONS_H
@@ -18,18 +17,16 @@
 *  Iterates over all the elements of the string and appends them 
 *  to the list
 * 
-*  @param List<char> list
+*  @param List<char>& list
 *  @param std::string string
-*  @return List<char>
+*  @return void
 */
-List<char> fillList(List<char> list, std::string string)
+void fillList(List<char>& list, std::string string)
 {
     for (char letter: string)
     {
         list.insertAtBack(letter);
     }
-
-    return list;
 }
 
 #endif
