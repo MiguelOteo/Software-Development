@@ -1,75 +1,129 @@
+/**
+ * @file Package.cpp
+ * @brief Implementation of the Package class, representing a parcel with sender and receiver information.
+ * 
+ * This file defines the main constructor and accessor/mutator functions for the Package class. 
+ * The class encapsulates details about a package, including sender and receiver names, addresses, 
+ * and the package weight.
+ * 
+ * @authors Miguel Oteo, Alvaro Redondo 
+ */
+
 #include <cmath>
 #include <iostream>
-#include "../../include/enums.hpp"
-#include "../../include/structs.hpp"
+#include "../../include/obj/Package.hpp"
+#include "../../include/str/structs.hpp"
 
-class Package
+/**
+ * @brief Main constructor for Package.
+ * 
+ * @param weight The weight of the package.
+*/
+Package::Package(float weight)
 {
-    private: 
-        TypePackage type;
-        float weight;
+    this->weight = weight;
+}
 
-        Name senderName;
-        Address addressSender;
+/*
+* Getters and Setters
+*/
 
-        Name receiverName;
-        Address addressReceiver;
+/**
+ * @brief Get the weight of the package.
+ * 
+ * @return The weight of the package.
+ */
+float Package::getWeight()
+{
+    return this->weight;
+}
 
+/**
+ * @brief Set the weight of the package.
+ * 
+ * @param weight The new weight of the package.
+ */
+void Package::setWeight(float weight)
+{
+    this->weight = weight;
+}
 
-    public:
+/**
+ * @brief Get the name of the sender.
+ * 
+ * @return The name of the sender.
+ */
+Name Package::getSenderName()
+{
+    return this->senderName;
+}
 
-        // Default constructor
-        Package();
+/**
+ * @brief Set the name of the sender.
+ * 
+ * @param senderName The new name of the sender.
+*/
+void Package::setSenderName(const Name& senderName)
+{
+    this->senderName = senderName;
+}
 
-        // Main constructor
-        Package(TypePackage type, float weight)
-        {
-            this->type = type;
-            this->weight = weight;
-        }
+/**
+ * @brief Get the address of the sender.
+ * 
+ * @return The address of the sender.
+ */
+Address Package::getAddressSender()
+{
+    return this->addressSender;
+}
 
-        /*
-            Getters and Setters
-        */
+/**
+ * @brief Set the address of the sender.
+ * 
+ * @param addressSender The new address of the sender.
+ */
+void Package::setAddressSender(const Address& addressSender)
+{
+    this->addressSender = addressSender;
+}
 
-        // Type variable
-        TypePackage getType() 
-        {
-            return this->type;
-        }
+/**
+ * @brief Get the name of the receiver.
+ * 
+ * @return The name of the receiver.
+ */
+Name Package::getReceiverName()
+{
+    return this->receiverName;
+}
 
-        void setType(TypePackage type)
-        {
-            this->type = type;
-        }
+/**
+ * @brief Set the name of the receiver.
+ * 
+ * @param receiverName The new name of the receiver.
+ */
+void Package::setReceiverName(const Name& receiverName)
+{
+    this->receiverName = receiverName;
+}
 
-        // Weight variable
-        float getWeight()
-        {
-            return this->weight;
-        }
+/**
+ * @brief Get the address of the receiver.
+ * 
+ * @return The address of the receiver.
+ */
+Address Package::getAddressReceiver()
+{
+    return this->addressReceiver;
+}
 
-        void setWeight(float weight)
-        {
-            this->weight = weight;
-        }
-
-        /*
-            Methods
-        */
-        float calculateCost()
-        {
-            float cost = 0;
-        
-            // Base cost for all packages
-            cost = 5 + weight*2.5;
-           
-            // Additional cost for OvernightPackage type
-            if(this->type == OvernightPackage)
-            {
-                cost = cost + pow(weight, 2)*weight;
-            }
-
-            return cost;
-        }
-};
+/**
+ * @brief Set the address of the receiver.
+ * 
+ * @param addressReceiver The new address of the receiver.
+ */
+void Package::setAddressReceiver(const Address& addressReceiver)
+{
+    this->addressReceiver = addressReceiver;
+}

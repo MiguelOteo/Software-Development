@@ -1,100 +1,85 @@
-/*
- *  Created At: 27-02-2024
- *  Authors: Miguel Oteo, Alvaro Redondo 
+/**
+ * @file Package.cpp
+ * @brief Implementation of the Package class, representing a parcel with sender and receiver information.
+ * 
+ * This file defines the main constructor and accessor/mutator functions for the Package class. 
+ * The class encapsulates details about a package, including sender and receiver names, addresses, 
+ * and the package weight.
+ * 
+ * @authors Miguel Oteo, Alvaro Redondo 
  */
 
-#include <cmath>
-#include <iostream>
-#include "../../include/enums.hpp"
-#include "../../include/structs.hpp"
-#include "Customer.cpp"
+#include "../../include/obj/Package.hpp"
+#include "../../include/str/structs.hpp"
 
-class Package
+/**
+ * @brief Main constructor for Package.
+ * 
+ * @param weight The weight of the package.
+ */
+Package::Package(float weight, Customer* sender, Customer* receiver) : 
+    weight(weight), sender(sender), receiver(receiver){};
+
+/*
+* Getters and Setters
+*/
+
+/**
+ * @brief Get the weight of the package.
+ * 
+ * @return The weight of the package.
+ */
+float Package::getWeight()
 {
-    private: 
-        TypePackage type;
-        float weight;
-        Customer* sender;
-        Customer* receiver;
+    return this->weight;
+}
 
-    public:
+/**
+ * @brief Set the weight of the package.
+ * 
+ * @param weight The new weight of the package.
+ */
+void Package::setWeight(float weight)
+{
+    this->weight = weight;
+}
 
-        // Constructor
-        Package(TypePackage type, float weight, Customer* sender, Customer* receiver) : 
-            type(type), weight(weight), sender(sender), receiver(receiver) {}
+/**
+ * @brief Get the sender.
+ * 
+ * @return The customer who sends the package.
+ */
+Customer* Package::getSender()
+{
+    return this->sender;
+}
 
-        /*
-            Getters and Setters
-        */
+/**
+ * @brief Set the sender.
+ * 
+ * @param sender The new customer who sends the package.
+ */
+void Package::setSender(Customer* sender)
+{
+    this->sender = sender;
+}
 
-        // Type variable
-        TypePackage getType() 
-        {
-            return this->type;
-        }
+/**
+ * @brief Get the reciever.
+ * 
+ * @return The customer who recieves the package.
+ */
+Customer* Package::getReceiver()
+{
+    return this->receiver;
+}
 
-        void setType(TypePackage type)
-        {
-            this->type = type;
-        }
-
-        // Weight variable
-        float getWeight()
-        {
-            return this->weight;
-        }
-
-        void setWeight(float weight)
-        {
-            this->weight = weight;
-        }
-
-        // Sender variable
-        Customer* getSender()
-        {
-            return this->sender;
-        }
-
-        void setSender(Customer* sender)
-        {
-            this->sender = sender;
-        }
-
-        // Receiver variable
-        Customer* getReceiver()
-        {
-            return this->receiver;
-        }
-
-        void setReceiver(Customer* receiver)
-        {
-            this->receiver = receiver;
-        }
-
-        /*
-            Methods
-        */
-
-        float calculateCost()
-        {
-            float cost = 0;
-        
-            // Base cost for all packages
-            cost = 5 + weight*2.5;
-           
-            // Additional cost for OvernightPackage type
-            if(this->type == OvernightPackage)
-            {
-                cost = cost + pow(weight, 2)*weight;
-            }
-
-            return cost;
-        }
-
-        void printCost()
-        {
-            float cost = calculateCost();
-
-            std::cout << "Cost of the package is: " << cost << std::endl;
-        }
-};
+/**
+ * @brief Set the receiver.
+ * 
+ * @param receiver The new customer who Receives the package.
+ */
+void Package::setReceiver(Customer* receiver)
+{
+    this->receiver = receiver;
+}

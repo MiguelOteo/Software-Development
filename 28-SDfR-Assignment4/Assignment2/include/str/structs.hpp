@@ -10,7 +10,7 @@
 
 struct Address 
 {
-    int streetNumber;
+    std::string streetNumber;
     std::string street;
     std::string city;
     std::string country; 
