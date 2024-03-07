@@ -27,14 +27,14 @@ void printCost(std::list<Package*>);
 void printCustomerInfo(Customer* customer);
 
 /**
- * @brief Print contact persons for business customers on Christmas cards.
+ * @brief Print contact persons for business customers once.
  * 
  * This function iterates through a list of Customer pointers, checks if each
  * customer is a BusinessCustomer, and if so, prints the contact person information
  * for Christmas cards using the toStringContactPerson method.
  * 
- * @param customers The list of Customer pointers.
+ * @param packages The list of Packages pointers.
  */
-void printChristmasCardContactPersons(std::list<Customer*>& customers);
+void printChristmasCardContactPersons(std::list<Package*>& packages);
 
 #endif

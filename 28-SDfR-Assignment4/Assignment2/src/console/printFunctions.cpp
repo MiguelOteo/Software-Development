@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <algorithm>
 #include "../../include/obj/package.hpp"
 #include "../../include/obj/BusinessCustomer.hpp"
 
@@ -50,28 +51,50 @@ void printCustomerInfo(Customer* customer)
  * 
  * @param customers The list of Customer pointers.
  */
-void printChristmasCardContactPersons(std::list<Customer*>& customers)
+void printChristmasCardContactPersons(std::list<Package*>& packages)
 {
-    // Iterate through the list of customers
-    for (const auto& customer : customers) 
+    // Maintain a list of unique business customers and their contact information
+    std::list<Customer*> uniqueCustomers;
+    std::list<std::string> customerData;
+
+    // Iterate through the list of packages
+    for (const auto& package : packages) 
     {
+        // Get both sender and receiver from the package
+        Customer* sender = package->getSender();
+        Customer* receiver = package->getReceiver();
+
         // Attempt to cast the customer pointer to a BusinessCustomer pointer
-        const auto businessCustomer = dynamic_cast<BusinessCustomer*>(customer);
+        BusinessCustomer* senderBusinessCustomer = dynamic_cast<BusinessCustomer*>(sender);
+        BusinessCustomer* receiverBusinessCustomer = dynamic_cast<BusinessCustomer*>(receiver);
 
-        // Skip non-business customers
-        if (!businessCustomer) 
-        {
+        // Skip if both customers are non-business customers
+        if (senderBusinessCustomer == nullptr && receiverBusinessCustomer == nullptr) 
             continue;
-        }
 
-        // Retrieve contact person information as a list of strings
-        std::list<std::string> customerData;
-        customerData = businessCustomer->toStringContactPerson(customerData);
-
-        // Print each line of contact person information for Christmas cards
-        for (auto& dataLine : customerData)
+        // Check and process sender if it is a business customer and has not been processed before
+        if (senderBusinessCustomer != nullptr && 
+            std::find(uniqueCustomers.begin(), uniqueCustomers.end(), senderBusinessCustomer) == uniqueCustomers.end())
         {
-            std::cout << dataLine << std::endl;
+            // Retrieve contact person information as a list of strings
+            customerData = senderBusinessCustomer->toStringContactPerson(customerData);
+            uniqueCustomers.push_back(senderBusinessCustomer);
         }
+
+        // Check and process receiver if it is a business customer and has not been processed before
+        if (receiverBusinessCustomer != nullptr && 
+            std::find(uniqueCustomers.begin(), uniqueCustomers.end(), receiverBusinessCustomer) == uniqueCustomers.end())
+        {
+            // Retrieve contact person information as a list of strings
+            customerData = receiverBusinessCustomer->toStringContactPerson(customerData);
+            uniqueCustomers.push_back(receiverBusinessCustomer);
+        } 
+    }
+
+    // Print each line of contact person information
+    for (auto& dataLine : customerData)
+    {
+        std::cout << dataLine << std::endl;
     }
 }
+

@@ -13,6 +13,7 @@ int main() { // Init of the main loop
     std::list<Package*> packages;
     std::list<Customer*> customers;
 
+    // Init of testing data
     float weight = 1.4;
     float weight2 = 1.4;
     float weight3 = 3.4;
@@ -26,6 +27,15 @@ int main() { // Init of the main loop
         "28013",     // Postal code
     };
 
+    Address addressTest2 = 
+    {
+        "324",     // Number
+        "Murcia",  // Street
+        "Ibiza",   // City
+        "Spain",   // Country
+        "23748",   // Postal code
+    };
+
     Name nameTest = 
     {
         "Miguel",  // Name
@@ -33,44 +43,76 @@ int main() { // Init of the main loop
         "Oteo"     // Last name
     };
 
-    CompanyData companyDataTest =
+    Name nameTest2 = 
     {
-        "Twente University",  // Company name
-        "7346283LGHD"         // CID
+        "Alvaro",    // Name
+        "",          // Middle name
+        "Arredondo"  // Last name
     };
 
-    BusinessCustomer* bussCustomerEmpty = new BusinessCustomer(addressTest, companyDataTest, nameTest);
-    PrivateCustomer* privCustomerEmpty = new PrivateCustomer(addressTest, nameTest);
-    BusinessCustomer* bussCustomer = new BusinessCustomer(addressTest, companyDataTest, nameTest);
-    BusinessCustomer* privCustomer = new BusinessCustomer(addressTest, companyDataTest, nameTest);
-    
-    
-    TwoDayPackage* package1 = new TwoDayPackage(weight, bussCustomer, privCustomer);
-    OverNightPackage* package2 = new OverNightPackage(weight2, privCustomer, bussCustomer);
-    OverNightPackage* package3 = new OverNightPackage(weight3, bussCustomer, privCustomer);
-    
-    customers.push_back(bussCustomer);
-    customers.push_back(privCustomer);
-    customers.push_back(privCustomerEmpty);
-    customers.push_back(bussCustomerEmpty);
+    CompanyData companyDataTest =
+    {
+        "Company 1",   // Company name
+        "7346283LGHD"  // CID
+    };
 
+    CompanyData companyDataTest2 =
+    {
+        "Company 2",   // Company name
+        "78472342GHE"  // CID
+    };
+
+    // Init of all test customers and packages
+    BusinessCustomer* bussCustomerEmpty = new BusinessCustomer(addressTest, companyDataTest, nameTest2);
+    BusinessCustomer* bussCustomer = new BusinessCustomer(addressTest2, companyDataTest, nameTest2);
+    BusinessCustomer* bussCustomer2 = new BusinessCustomer(addressTest, companyDataTest2, nameTest);
+
+    PrivateCustomer* privCustomerEmpty = new PrivateCustomer(addressTest, nameTest2);
+    PrivateCustomer* privCustomer = new PrivateCustomer(addressTest2, nameTest);
+    PrivateCustomer* privCustomer2 = new PrivateCustomer(addressTest2, nameTest2);
+
+    TwoDayPackage* package1 = new TwoDayPackage(weight, bussCustomer, privCustomer2);
+    OverNightPackage* package2 = new OverNightPackage(weight2, bussCustomer, bussCustomer2);
+    OverNightPackage* package3 = new OverNightPackage(weight3, privCustomer, privCustomer);
+    
+    // Adding private customers to the list (random order)
+    customers.push_back(bussCustomer);
+    customers.push_back(bussCustomerEmpty);
+    customers.push_back(privCustomer);
+    customers.push_back(privCustomer2);
+    customers.push_back(bussCustomer2);
+    customers.push_back(privCustomerEmpty);
+    
     packages.push_back(package1);
     packages.push_back(package2);
     packages.push_back(package3);
 
+    std::cout << "\n\n\nTest of function printCustomerInfo()\n" << std::endl;
+    // Print the customer data of each customer
+    int count = 1;
     for (auto& costumer: customers)
     {
+        std::cout << "\n\n################\nCUSTOMER " << count;
         printCustomerInfo(costumer);
+        count = count + 1;
     }
 
-    printChristmasCardContactPersons(customers);
+    std::cout << "\n\n\nTest of function printChristmasCardContactPersons()\n" << std::endl;
+    // Print the constact data of the customers which are bussiness customers
+    printChristmasCardContactPersons(packages);
 
-    std::cout << "\n\nTest of function printCost()" << std::endl;
+    std::cout << "\n\n\nTest of function printCost()\n" << std::endl;
     printCost(packages);
 
     // Free allocated memory
-    for (const auto& package : packages) {
+    for (const auto& package : packages) 
+    {
         delete package;
+    }
+
+    for (const auto& customer : customers)
+    {
+        delete customer;
     }
 
     return 0;
