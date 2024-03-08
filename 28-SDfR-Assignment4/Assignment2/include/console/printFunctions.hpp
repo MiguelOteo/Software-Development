@@ -14,7 +14,7 @@
  * 
  * @param packages The list of Package pointers.
  */
-void printCost(std::list<Package*>);
+void printCost(std::list<Package*>& packages);
 
 /**
  * @brief Print customer information.

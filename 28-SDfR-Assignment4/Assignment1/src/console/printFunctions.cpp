@@ -10,7 +10,7 @@
  * 
  * @param packages The list of Package pointers.
  */
-void printCost(std::list<Package*> packages)
+void printCost(std::list<Package*>& packages)
 {
     for (auto* package : packages)
     {

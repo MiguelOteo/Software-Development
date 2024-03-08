@@ -12,7 +12,7 @@
  * 
  * @param packages The list of Package pointers.
  */
-void printCost(std::list<Package*> packages)
+void printCost(std::list<Package*>& packages)
 {
     for (auto* package : packages)
     {
@@ -67,11 +67,7 @@ void printChristmasCardContactPersons(std::list<Package*>& packages)
         // Attempt to cast the customer pointer to a BusinessCustomer pointer
         BusinessCustomer* senderBusinessCustomer = dynamic_cast<BusinessCustomer*>(sender);
         BusinessCustomer* receiverBusinessCustomer = dynamic_cast<BusinessCustomer*>(receiver);
-
-        // Skip if both customers are non-business customers
-        if (senderBusinessCustomer == nullptr && receiverBusinessCustomer == nullptr) 
-            continue;
-
+        
         // Check and process sender if it is a business customer and has not been processed before
         if (senderBusinessCustomer != nullptr && 
             std::find(uniqueCustomers.begin(), uniqueCustomers.end(), senderBusinessCustomer) == uniqueCustomers.end())

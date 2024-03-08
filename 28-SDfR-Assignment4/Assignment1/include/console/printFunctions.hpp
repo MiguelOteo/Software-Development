@@ -5,6 +5,6 @@
 #ifndef PRINTFUNCTIONS_H 
 #define PRINTFUNCTIONS_H
 
-void printCost(std::list<Package*>);
+void printCost(std::list<Package*>& packages);
 
 #endif
