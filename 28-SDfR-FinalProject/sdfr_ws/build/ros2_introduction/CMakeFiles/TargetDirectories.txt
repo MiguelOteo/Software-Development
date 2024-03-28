@@ -1,0 +1,10 @@
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/uninstall.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/ros2_introduction_uninstall.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/brightness_detection.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/test.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/edit_cache.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/rebuild_cache.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/list_install_components.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/install.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/install/local.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles/install/strip.dir

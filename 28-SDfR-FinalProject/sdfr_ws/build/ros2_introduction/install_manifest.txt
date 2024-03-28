@@ -1,0 +1,16 @@
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/lib/ros2_introduction/brightness_detection
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ament_index/resource_index/package_run_dependencies/ros2_introduction
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ament_index/resource_index/parent_prefix_path/ros2_introduction
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/environment/ament_prefix_path.sh
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/environment/ament_prefix_path.dsv
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/environment/path.sh
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/environment/path.dsv
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/local_setup.bash
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/local_setup.sh
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/local_setup.zsh
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/local_setup.dsv
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/package.dsv
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ament_index/resource_index/packages/ros2_introduction
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/cmake/ros2_introductionConfig.cmake
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/cmake/ros2_introductionConfig-version.cmake
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/package.xml

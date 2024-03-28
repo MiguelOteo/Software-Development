@@ -1,0 +1,14 @@
+[0.009s] Invoking command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction -- -j12 -l12
+[0.033s] [35m[1mConsolidate compiler generated dependencies of target brightness_detection[0m
+[0.044s] [ 50%] [32m[1mLinking CXX executable brightness_detection[0m
+[0.266s] /usr/bin/ld: CMakeFiles/brightness_detection.dir/src/brightness_detection.cpp.o: in function `BrightnessDetection::image_callback(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > const>)':
+[0.266s] brightness_detection.cpp:(.text+0x6e9): undefined reference to `image_functions::getImageWidth(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > const>)'
+[0.266s] /usr/bin/ld: brightness_detection.cpp:(.text+0x70d): undefined reference to `image_functions::getImageHeight(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > const>)'
+[0.266s] /usr/bin/ld: brightness_detection.cpp:(.text+0x76a): undefined reference to `image_functions::getPixelBrightness(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > const>, int, int)'
+[0.266s] /usr/bin/ld: brightness_detection.cpp:(.text+0x79f): undefined reference to `image_functions::getImageWidth(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > const>)'
+[0.266s] /usr/bin/ld: brightness_detection.cpp:(.text+0x7db): undefined reference to `image_functions::getImageHeight(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > const>)'
+[0.288s] collect2: error: ld returned 1 exit status
+[0.289s] gmake[2]: *** [CMakeFiles/brightness_detection.dir/build.make:199: brightness_detection] Error 1
+[0.289s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/brightness_detection.dir/all] Error 2
+[0.290s] gmake: *** [Makefile:146: all] Error 2
+[0.292s] Invoked command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction -- -j12 -l12

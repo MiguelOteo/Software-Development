@@ -1,5 +1,6 @@
-#include "ros2_introduction/brightness_detection.hpp"
+#include "../include/ros2_introduction/brightness_detection.hpp"
 #include "sensor_msgs/msg/image.hpp"
+#include "image_functions_sdfr/image_functions.hpp"
 #include <iostream>
 #include <string>
 
@@ -24,7 +25,17 @@ BrightnessDetection::BrightnessDetection() : Node("brightness_detection")
 void BrightnessDetection::image_callback(sensor_msgs::msg::Image::ConstSharedPtr img) 
 {
     // Calculate the average brightness of the received image using a helper function
-    int avg_brightness = image_functions_sdfr::calculate_average_brightness(img);
+    int avg_brightness = 0;
+    int total_brightness = 0;
+    int num_pixels = image_functions::getImageWidth(img) * image_functions::getImageHeight(img);
+
+    for (int y = 0; y < image_functions::getImageHeight(img); ++y) {
+        for (int x = 0; x < image_functions::getImageWidth(img); ++x) {
+            total_brightness += image_functions::getPixelBrightness(img, x, y);
+        }
+    }
+    
+    avg_brightness = total_brightness / num_pixels;
 
     // Publish the calculated average brightness to the "/light_level" topic
     auto light_msg = std::make_unique<example_interfaces::msg::Int8>(); // Create a unique pointer for the Int8 message
@@ -39,6 +50,7 @@ void BrightnessDetection::image_callback(sensor_msgs::msg::Image::ConstSharedPtr
     status_msg->data = brightness_status; // Assign the determined brightness status to the String message data field
     brightness_status_publisher_->publish(std::move(status_msg)); // Publish the String message
 }
+
 
 // The main function starts the node and "spins" it, i.e. handles all ROS2-related events 
 // such as receiving messages on topics

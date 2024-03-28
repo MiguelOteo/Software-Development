@@ -9,10 +9,12 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(example_interfaces REQUIRED)
+find_package(image_functions_sdfr REQUIRED)
 include_directories(include)
 
 add_executable(brightness_detection src/brightness_detection.cpp)
-ament_target_dependencies(brightness_detection rclcpp sensor_msgs)
+ament_target_dependencies(brightness_detection rclcpp sensor_msgs example_interfaces image_functions_sdfr)
 
 # Install targets
 install(
