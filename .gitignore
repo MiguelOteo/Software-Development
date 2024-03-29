@@ -4,4 +4,7 @@
 /.bin
 /.idea
 /.json
-.vscode
+/.vscode
+/.build
+/.install
+/.log
