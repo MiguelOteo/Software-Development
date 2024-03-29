@@ -8,7 +8,7 @@
 
 # Ignore all VS Code files
 *.json
-**/vscode
+**/.vscode
 
 # Ignored all the compiler files from ROS2
 **/build
