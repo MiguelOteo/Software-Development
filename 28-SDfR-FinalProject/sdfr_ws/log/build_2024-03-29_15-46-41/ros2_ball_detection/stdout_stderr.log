@@ -1,9 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target ball_detection[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/ball_detection.dir/src/BallDetection.cpp.o[0m
-[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2_ball_detection/src/BallDetection.cpp:[m[K In member function ‘[01m[Kvoid BallDetection::image_callback(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
-[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2_ball_detection/src/BallDetection.cpp:50:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kcv_bridge::CvImagePtr[m[K’ {aka ‘[01m[Kclass std::shared_ptr<cv_bridge::CvImage>[m[K’} has no member named ‘[01m[KtoImageMsg[m[K’
-   50 |         debug_publisher_->publish(cv_ptr.[01;31m[KtoImageMsg[m[K());
-      |                                          [01;31m[K^~~~~~~~~~[m[K
-gmake[2]: *** [CMakeFiles/ball_detection.dir/build.make:76: CMakeFiles/ball_detection.dir/src/BallDetection.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ball_detection.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

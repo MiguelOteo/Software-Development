@@ -1,2 +1,0 @@
-gmake[2]: Warning: File '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2-introduction/src/brightness_detection.cpp' has modification time 770 s in the future
-gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
