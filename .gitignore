@@ -1,10 +1,14 @@
 # Ignore .settings file, bin, target and .idea folder
 /.settings
-.exe
+/.exe
 /.bin
 /.idea
+
+# Ignore all VS Code files
 /.json
 /.vscode
+
+# Ignored all the compiler files from ROS2
 /.build
 /.install
 /.log
