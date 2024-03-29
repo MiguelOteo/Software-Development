@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+    <name>ros2_introduction</name>
+    <version>1.0.0</version>
+    <description>This is the ROS 2 introduction package for SDFR. This package was modified by group: XX.</description>
+    <maintainer email="group_member1@emailhere.com">Member name</maintainer>
+    <maintainer email="group_member2@emailhere.com">Member name</maintainer>
+    <license>BSD</license>
+    <author email="j.h.j.pott@student.utwente.nl">Jurrijn Pott</author>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <depend>rclcpp</depend>
+    <depend>sensor_msgs</depend>
+    <depend>image_functions_sdfr</depend>
+    <depend>example_interfaces</depend>
+    <depend>custom_msg</depend>
+
+    <test_depend>ament_lint_auto</test_depend>
+    <test_depend>ament_lint_common</test_depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+</package>
