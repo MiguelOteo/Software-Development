@@ -1,0 +1,1 @@
+Invoking command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr -- -j12 -l12

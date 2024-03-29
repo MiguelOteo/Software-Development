@@ -272,7 +272,7 @@ SITE:STRING=Surface-Pro-9
 TinyXML2_DIR:PATH=TinyXML2_DIR-NOTFOUND
 
 //Path to a library.
-_lib:FILEPATH=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/lib/libimage_functions.so
+_lib:FILEPATH=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_cpp.so
 
 //The directory containing a CMake configuration file for action_msgs.
 action_msgs_DIR:PATH=/opt/ros/humble/share/action_msgs/cmake
@@ -330,6 +330,9 @@ ament_index_cpp_DIR:PATH=/opt/ros/humble/share/ament_index_cpp/cmake
 
 //The directory containing a CMake configuration file for builtin_interfaces.
 builtin_interfaces_DIR:PATH=/opt/ros/humble/share/builtin_interfaces/cmake
+
+//The directory containing a CMake configuration file for custom_msg.
+custom_msg_DIR:PATH=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/share/custom_msg/cmake
 
 //The directory containing a CMake configuration file for example_interfaces.
 example_interfaces_DIR:PATH=/opt/ros/humble/share/example_interfaces/cmake

@@ -1,0 +1,29 @@
+[35m[1mConsolidate compiler generated dependencies of target ball_detection[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/ball_detection.dir/src/BallDetection.cpp.o[0m
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2_ball_detection/src/BallDetection.cpp:[m[K In member function ‘[01m[Kvoid BallDetection::publish_debug_image(const cv::Mat&)[m[K’:
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2_ball_detection/src/BallDetection.cpp:108:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kimage[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  108 | void BallDetection::publish_debug_image([01;35m[Kconst cv::Mat& image[m[K)
+      |                                         [01;35m[K~~~~~~~~~~~~~~~^~~~~[m[K
+[100%] [32m[1mLinking CXX executable ball_detection[0m
+[100%] Built target ball_detection
+-- Install configuration: ""
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/lib/ros2_ball_detection/ball_detection
+-- Set runtime path of "/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/lib/ros2_ball_detection/ball_detection" to ""
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/include
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/include/ros2_ball_detection
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/include/ros2_ball_detection/BallDetection.hpp
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ament_index/resource_index/package_run_dependencies/ros2_ball_detection
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ament_index/resource_index/parent_prefix_path/ros2_ball_detection
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/environment/ament_prefix_path.sh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/environment/path.sh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/environment/path.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/local_setup.bash
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/local_setup.sh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/local_setup.zsh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/local_setup.dsv
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/package.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ament_index/resource_index/packages/ros2_ball_detection
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/cmake/ros2_ball_detectionConfig.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/cmake/ros2_ball_detectionConfig-version.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection/share/ros2_ball_detection/package.xml

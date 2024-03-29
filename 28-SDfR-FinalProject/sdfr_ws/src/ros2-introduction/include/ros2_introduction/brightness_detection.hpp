@@ -8,6 +8,7 @@
 #include "sensor_msgs/msg/image.hpp"
 #include "example_interfaces/msg/int8.hpp"
 #include "example_interfaces/msg/string.hpp"
+#include "custom_msg/msg/brightness_status.hpp"
 
 // Placeholder for std::bind.
 using std::placeholders::_1;
@@ -29,7 +30,7 @@ private:
     // Define private variables here if needed.
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subcription_;
     rclcpp::Publisher<example_interfaces::msg::Int8>::SharedPtr light_level_publisher_;
-    rclcpp::Publisher<example_interfaces::msg::String>::SharedPtr brightness_status_publisher_;
+    rclcpp::Publisher<custom_msg::msg::BrightnessStatus>::SharedPtr brightness_status_publisher_;
 
     int threshold_ = 100; // Example threshold value, you should define the appropriate threshold for your application.
 

@@ -1,0 +1,6 @@
+[0.006s] Invoking command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction': AMENT_PREFIX_PATH=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr:/opt/ros/humble LD_LIBRARY_PATH=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction -- -j12 -l12
+[0.034s] gmake[2]: Warning: File '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2-introduction/src/brightness_detection.cpp' has modification time 770 s in the future
+[0.040s] [ 50%] [32mBuilding CXX object CMakeFiles/brightness_detection.dir/src/brightness_detection.cpp.o[0m
+[4.579s] [100%] [32m[1mLinking CXX executable brightness_detection[0m
+[4.808s] gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[4.813s] [100%] Built target brightness_detection

@@ -1,0 +1,20 @@
+[35m[1mConsolidate compiler generated dependencies of target brightness_detection[0m
+[100%] Built target brightness_detection
+-- Install configuration: ""
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/lib/ros2_introduction/brightness_detection
+-- Set runtime path of "/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/lib/ros2_introduction/brightness_detection" to ""
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ament_index/resource_index/package_run_dependencies/ros2_introduction
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ament_index/resource_index/parent_prefix_path/ros2_introduction
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/environment/ament_prefix_path.sh
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/environment/path.sh
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/environment/path.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/local_setup.bash
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/local_setup.sh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/local_setup.zsh
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/local_setup.dsv
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/package.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ament_index/resource_index/packages/ros2_introduction
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/cmake/ros2_introductionConfig.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/cmake/ros2_introductionConfig-version.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction/share/ros2_introduction/package.xml

@@ -1,0 +1,7 @@
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2_ball_detection/src/BallDetection.cpp:[m[K In member function ‘[01m[Kvoid BallDetection::publish_debug_image(const cv::Mat&)[m[K’:
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2_ball_detection/src/BallDetection.cpp:114:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class cv::Mat[m[K’ has no member named ‘[01m[Kget[m[K’
+  114 |     debug_publisher_->publish(*image.[01;31m[Kget[m[K());
+      |                                      [01;31m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/ball_detection.dir/build.make:76: CMakeFiles/ball_detection.dir/src/BallDetection.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ball_detection.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

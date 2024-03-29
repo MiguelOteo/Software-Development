@@ -1,0 +1,30 @@
+[100%] Built target image_functions
+-- Install configuration: ""
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include/image_functions_sdfr
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include/image_functions_sdfr/visibility_control.h
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include/image_functions_sdfr/image_functions.hpp
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/lib/libimage_functions.so
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/library_path.sh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/library_path.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/ament_index/resource_index/package_run_dependencies/image_functions_sdfr
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/ament_index/resource_index/parent_prefix_path/image_functions_sdfr
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/ament_prefix_path.sh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/path.sh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/path.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/local_setup.bash
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/local_setup.sh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/local_setup.zsh
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/local_setup.dsv
+-- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/package.dsv
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/ament_index/resource_index/packages/image_functions_sdfr
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/export_image_functions_sdfrExport.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/export_image_functions_sdfrExport-noconfig.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/image_functions_sdfrConfig.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/image_functions_sdfrConfig-version.cmake
+-- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/package.xml

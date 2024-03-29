@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msg/msg/BoundingBox.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msg {
+  module msg {
+    @verbatim (language="comment", text=
+      "BoundingBox.msg")
+    struct BoundingBox {
+      float center_point_x;
+
+      float center_point_y;
+
+      float width;
+
+      float height;
+
+      boolean ball_found;
+    };
+  };
+};

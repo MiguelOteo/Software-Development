@@ -1,0 +1,34 @@
+[0.007s] Invoking command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr -- -j12 -l12
+[0.039s] [100%] Built target image_functions
+[0.046s] Invoked command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr -- -j12 -l12
+[0.066s] Invoking command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr
+[0.072s] -- Install configuration: ""
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include/image_functions_sdfr
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include/image_functions_sdfr/visibility_control.h
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include/image_functions_sdfr/image_functions.hpp
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/lib/libimage_functions.so
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/library_path.sh
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/library_path.dsv
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/ament_index/resource_index/package_run_dependencies/image_functions_sdfr
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/ament_index/resource_index/parent_prefix_path/image_functions_sdfr
+[0.072s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/ament_prefix_path.sh
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/ament_prefix_path.dsv
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/path.sh
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/environment/path.dsv
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/local_setup.bash
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/local_setup.sh
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/local_setup.zsh
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/local_setup.dsv
+[0.073s] -- Installing: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/package.dsv
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/ament_index/resource_index/packages/image_functions_sdfr
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/export_image_functions_sdfrExport.cmake
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/export_image_functions_sdfrExport-noconfig.cmake
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/ament_cmake_export_libraries-extras.cmake
+[0.073s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/ament_cmake_export_targets-extras.cmake
+[0.074s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.074s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/image_functions_sdfrConfig.cmake
+[0.074s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/cmake/image_functions_sdfrConfig-version.cmake
+[0.074s] -- Up-to-date: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/share/image_functions_sdfr/package.xml
+[0.074s] Invoked command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/image_functions_sdfr

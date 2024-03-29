@@ -1,0 +1,10 @@
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/uninstall.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/ros2_ball_detection_uninstall.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/ball_detection.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/test.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/edit_cache.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/rebuild_cache.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/list_install_components.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/install.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/install/local.dir
+/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_ball_detection/CMakeFiles/install/strip.dir

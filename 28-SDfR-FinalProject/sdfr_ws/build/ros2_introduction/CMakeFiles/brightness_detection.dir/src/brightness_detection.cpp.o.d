@@ -613,6 +613,10 @@ CMakeFiles/brightness_detection.dir/src/brightness_detection.cpp.o: \
  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__struct.hpp \
  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__builder.hpp \
  /opt/ros/humble/include/example_interfaces/example_interfaces/msg/detail/string__traits.hpp \
+ /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/include/custom_msg/custom_msg/msg/brightness_status.hpp \
+ /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/include/custom_msg/custom_msg/msg/detail/brightness_status__struct.hpp \
+ /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/include/custom_msg/custom_msg/msg/detail/brightness_status__builder.hpp \
+ /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/include/custom_msg/custom_msg/msg/detail/brightness_status__traits.hpp \
  /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include/image_functions_sdfr/image_functions.hpp \
  /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/include/image_functions_sdfr/visibility_control.h \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/image_encodings.hpp

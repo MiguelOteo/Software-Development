@@ -1,0 +1,11 @@
+[0.009s] Invoking command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction': CMAKE_PREFIX_PATH=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr:/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg:/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction:/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection:/opt/ros/humble /usr/bin/cmake --build /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction -- -j12 -l12
+[0.044s] [35m[1mConsolidate compiler generated dependencies of target brightness_detection[0m
+[0.059s] [ 50%] [32mBuilding CXX object CMakeFiles/brightness_detection.dir/src/brightness_detection.cpp.o[0m
+[0.204s] [01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2-introduction/src/brightness_detection.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Kcustom_msg/msg/: No such file or directory
+[0.204s]     2 | #include [01;31m[K"custom_msg/msg/"[m[K
+[0.204s]       |          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[0.204s] compilation terminated.
+[0.207s] gmake[2]: *** [CMakeFiles/brightness_detection.dir/build.make:76: CMakeFiles/brightness_detection.dir/src/brightness_detection.cpp.o] Error 1
+[0.207s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/brightness_detection.dir/all] Error 2
+[0.207s] gmake: *** [Makefile:146: all] Error 2
+[0.209s] Invoked command in '/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction' returned '2': CMAKE_PREFIX_PATH=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr:/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg:/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_introduction:/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/ros2_ball_detection:/opt/ros/humble /usr/bin/cmake --build /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction -- -j12 -l12

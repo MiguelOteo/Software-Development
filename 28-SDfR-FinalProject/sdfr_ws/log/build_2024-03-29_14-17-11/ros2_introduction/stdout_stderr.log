@@ -1,0 +1,18 @@
+[35m[1mConsolidate compiler generated dependencies of target brightness_detection[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/brightness_detection.dir/src/brightness_detection.cpp.o[0m
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2-introduction/src/brightness_detection.cpp:[m[K In member function ‘[01m[Kvoid BrightnessDetection::image_callback(sensor_msgs::msg::Image_<std::allocator<void> >::ConstSharedPtr)[m[K’:
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2-introduction/src/brightness_detection.cpp:51:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::unique_ptr<custom_msg::msg::BrightnessStatus_<std::allocator<void> >, std::default_delete<custom_msg::msg::BrightnessStatus_<std::allocator<void> > > >[m[K’ has no member named ‘[01m[Kbrightness_status[m[K’
+   51 |     status_msg.[01;31m[Kbrightness_status[m[K = this->brightness_status;
+      |                [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2-introduction/src/brightness_detection.cpp:51:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass BrightnessDetection[m[K’ has no member named ‘[01m[Kbrightness_status[m[K’
+   51 |     status_msg.brightness_status = this->[01;31m[Kbrightness_status[m[K;
+      |                                          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2-introduction/src/brightness_detection.cpp:52:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::unique_ptr<custom_msg::msg::BrightnessStatus_<std::allocator<void> >, std::default_delete<custom_msg::msg::BrightnessStatus_<std::allocator<void> > > >[m[K’ has no member named ‘[01m[Klight_level[m[K’
+   52 |     status_msg.[01;31m[Klight_level[m[K = this->avg_brightness;
+      |                [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/src/ros2-introduction/src/brightness_detection.cpp:52:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass BrightnessDetection[m[K’ has no member named ‘[01m[Kavg_brightness[m[K’
+   52 |     status_msg.light_level = this->[01;31m[Kavg_brightness[m[K;
+      |                                    [01;31m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/brightness_detection.dir/build.make:76: CMakeFiles/brightness_detection.dir/src/brightness_detection.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/brightness_detection.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

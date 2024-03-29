@@ -99,6 +99,12 @@ brightness_detection: /opt/ros/humble/lib/libexample_interfaces__rosidl_typesupp
 brightness_detection: /opt/ros/humble/lib/libexample_interfaces__rosidl_typesupport_cpp.so
 brightness_detection: /opt/ros/humble/lib/libexample_interfaces__rosidl_generator_py.so
 brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/image_functions_sdfr/lib/libimage_functions.so
+brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_c.so
+brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_c.so
+brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_cpp.so
+brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_cpp.so
+brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_cpp.so
+brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_generator_py.so
 brightness_detection: /opt/ros/humble/lib/libaction_msgs__rosidl_typesupport_fastrtps_c.so
 brightness_detection: /opt/ros/humble/lib/libunique_identifier_msgs__rosidl_typesupport_fastrtps_c.so
 brightness_detection: /opt/ros/humble/lib/libaction_msgs__rosidl_typesupport_introspection_c.so
@@ -155,14 +161,10 @@ brightness_detection: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fas
 brightness_detection: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_c.so
 brightness_detection: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_c.so
 brightness_detection: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_c.so
-brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_c.so
 brightness_detection: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so
 brightness_detection: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_cpp.so
 brightness_detection: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
 brightness_detection: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
-brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-brightness_detection: /opt/ros/humble/lib/libfastcdr.so.1.0.24
-brightness_detection: /opt/ros/humble/lib/librmw.so
 brightness_detection: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
 brightness_detection: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
 brightness_detection: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
@@ -171,8 +173,6 @@ brightness_detection: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_int
 brightness_detection: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
 brightness_detection: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
 brightness_detection: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so
-brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_introspection_cpp.so
-brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_introspection_c.so
 brightness_detection: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_py.so
 brightness_detection: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_c.so
 brightness_detection: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_c.so
@@ -185,16 +185,24 @@ brightness_detection: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so
 brightness_detection: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 brightness_detection: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
 brightness_detection: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
-brightness_detection: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 brightness_detection: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so
 brightness_detection: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 brightness_detection: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 brightness_detection: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
+brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_c.so
+brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
+brightness_detection: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+brightness_detection: /opt/ros/humble/lib/librmw.so
+brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_introspection_cpp.so
+brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_introspection_c.so
 brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
+brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_c.so
+brightness_detection: /home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/install/custom_msg/lib/libcustom_msg__rosidl_generator_c.so
 brightness_detection: /opt/ros/humble/lib/librosidl_typesupport_c.so
 brightness_detection: /opt/ros/humble/lib/librcpputils.so
 brightness_detection: /opt/ros/humble/lib/librosidl_runtime_c.so
 brightness_detection: /opt/ros/humble/lib/librcutils.so
+brightness_detection: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 brightness_detection: CMakeFiles/brightness_detection.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/migueloteo/Desktop/Software-Development/28-SDfR-FinalProject/sdfr_ws/build/ros2_introduction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable brightness_detection"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/brightness_detection.dir/link.txt --verbose=$(VERBOSE)
