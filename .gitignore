@@ -7,10 +7,10 @@
 *.exe
 
 # Ignore all VS Code files
-/.json
-/.vscode
+*.json
+**/vscode
 
 # Ignored all the compiler files from ROS2
-.build/
-.install/
-.log/
+**/build
+**/install
+**/log
