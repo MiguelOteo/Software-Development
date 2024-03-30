@@ -28,7 +28,7 @@ BallDetection::BallDetection() : Node("ball_detection")
         ("/debug_image",10);
 
     // Initialize parameters
-    this->declare_parameter<bool>("debug_visualization", false);
+    this->declare_parameter<bool>("debug_visualization", true);
     this->get_parameter("debug_visualization", debug_visualization_);
 }
 
@@ -57,11 +57,11 @@ void BallDetection::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
 
     // Perform ball detection
     cv::Mat detected_image = detect_balls(cv_ptr->image);
-    cv_ptr->image = detected_image;
 
     // Publish debug visualization if enabled
     if (debug_visualization_)
     {
+        cv_ptr->image = detected_image;
         debug_publisher_->publish(*cv_ptr->toImageMsg());
     }
 }
@@ -117,13 +117,13 @@ cv::Mat BallDetection::detect_balls(const cv::Mat& image)
         if (aspect_ratio >= 0.9 && aspect_ratio <= 1.1)
         {
             // Fill in message data
-            bounding_box_msg->center_point_x = (bounding_rect.x + bounding_rect.width) / 2.0;
-            bounding_box_msg->center_point_y = (bounding_rect.y + bounding_rect.height) / 2.0;
+            bounding_box_msg->center_point_x = (bounding_rect.x + bounding_rect.width/2);
+            bounding_box_msg->center_point_y = (bounding_rect.y + bounding_rect.height/2);
             bounding_box_msg->width = bounding_rect.width;
             bounding_box_msg->height = bounding_rect.height;
 
             // Draw the bounding box around the detected ball
-            cv::rectangle(image, bounding_rect, cv::Scalar(0, 255, 0), 2);
+            cv::rectangle(image, bounding_rect, cv::Scalar(101, 179, 129), 1);
         }
     }
 

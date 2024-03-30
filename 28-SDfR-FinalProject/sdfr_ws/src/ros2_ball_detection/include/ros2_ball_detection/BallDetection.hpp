@@ -4,7 +4,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/image.hpp"
 #include "custom_msg/msg/bounding_box.hpp"
-#include "geometry_msgs/msg/point.hpp"
 #include "cv_bridge/cv_bridge.h"
 #include "sensor_msgs/image_encodings.hpp"
 #include <opencv2/opencv.hpp>

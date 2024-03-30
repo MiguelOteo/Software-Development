@@ -23,7 +23,7 @@ Run the node of the camera to image
 ros2 run image_tools cam2image
 ```
 
-Run the main node to detect brightness
+Run the main node to detect the ball
 ```bash
 ros2 run ros2_ball_detection ball_detection
 ```
@@ -46,7 +46,34 @@ ros2 run rqt_image_view rqt_image_view
 ```
 Select the output \debug_image
 
-### Remember 
+
+
+## To run the third asssignment
+Run the node of the camera to image
+```bash
+ros2 run image_tools cam2image
+```
+
+Run the main node to detect the ball
+```bash
+ros2 run ros2_ball_detection ball_detection
+```
+
+#### Debug image function
+Turn on the debug image output on both nodes
+```bash
+ros2 param set ball_detection debug_visualization true
+ros2 param set relbot_control debug_visualization true
+```
+
+Run this command to see the border around the ball on the porcessed image
+```bash
+ros2 run rqt_image_view rqt_image_view
+```
+Select the output \debug_image_control
+
+
+## Remember 
 On every console opened run the command
 ```bash
 source install/local_setup.bash
