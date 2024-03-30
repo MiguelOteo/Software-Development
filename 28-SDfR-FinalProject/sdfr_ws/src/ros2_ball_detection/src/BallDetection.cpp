@@ -28,8 +28,7 @@ BallDetection::BallDetection() : Node("ball_detection")
         ("/debug_image",10);
 
     // Initialize parameters
-    this->declare_parameter<bool>("debug_visualization", true);
-    this->get_parameter("debug_visualization", debug_visualization_);
+    this->declare_parameter<bool>("debug_visualization", false);
 }
 
 /**
@@ -58,7 +57,9 @@ void BallDetection::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
     // Perform ball detection
     cv::Mat detected_image = detect_balls(cv_ptr->image);
 
-    // Publish debug visualization if enabled
+    // Publish debug visualization if enabled  
+    debug_visualization_ = this->get_parameter("debug_visualization").as_bool();
+
     if (debug_visualization_)
     {
         cv_ptr->image = detected_image;

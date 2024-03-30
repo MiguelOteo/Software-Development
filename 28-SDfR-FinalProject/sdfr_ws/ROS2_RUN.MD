@@ -47,16 +47,36 @@ ros2 run rqt_image_view rqt_image_view
 Select the output \debug_image
 
 
-
 ## To run the third asssignment
 Run the node of the camera to image
 ```bash
 ros2 run image_tools cam2image
 ```
 
-Run the main node to detect the ball
+Run the secondary node to detect the ball
 ```bash
 ros2 run ros2_ball_detection ball_detection
+```
+
+Run the main node to compute the speed etc.
+```bash
+ros2 run ros2_relbot_control relbot_control
+```
+
+#### Control params
+Change the size of the ball
+```bash
+ros2 param set relbot_control ball_size <ball size>
+```
+
+Change angular gain 
+```bash
+ros2 param set relbot_control angular_gain <value>
+```
+
+Change linear gain 
+```bash
+ros2 param set relbot_control linear_gain <value>
 ```
 
 #### Debug image function

@@ -19,10 +19,6 @@ RELbotControl::RELbotControl() : Node("relbot_control")
     // Initialize the fields
     reference_bounding_box.center_point_x = 0.0;
     reference_bounding_box.center_point_y = 0.0;
-    reference_bounding_box.ball_found = true;
-
-    reference_bounding_box.width = 50.0;
-    reference_bounding_box.height = 50.0;
 
     /// RELbot control
     // Subscribe to the /bounding_box topic
@@ -47,15 +43,10 @@ RELbotControl::RELbotControl() : Node("relbot_control")
         ("/debug_image_control",10);
 
     // Initialize parameters
-    this->declare_parameter<bool>("debug_visualization", true);
+    this->declare_parameter<bool>("debug_visualization", false);
     this->declare_parameter<double>("linear_gain", 1.0);
     this->declare_parameter<double>("angular_gain", 1.0);
-    //this->declare_parameter<custom_msg::msg::BoundingBox>("bounding_box", reference_bounding_box);
-    
-    this->get_parameter("linear_gain", linear_gain_);
-    this->get_parameter("angular_gain", angular_gain_);
-    this->get_parameter("debug_visualization", debug_visualization_);
-    //this->get_parameter("bounding_box", reference_bounding_box);
+    this->declare_parameter<int>("ball_size", 50.0);
 }
 
 /**
@@ -71,6 +62,12 @@ void RELbotControl::control_callback(const custom_msg::msg::BoundingBox::SharedP
 {
     // Create TwistStamped message
     auto twist_msg = std::make_shared<geometry_msgs::msg::TwistStamped>();
+
+    // Check for parameters updates
+    reference_bounding_box.height = this->get_parameter("ball_size").as_int();
+    reference_bounding_box.width = this->get_parameter("ball_size").as_int();
+    linear_gain_ = this->get_parameter("linear_gain").as_double();
+    angular_gain_ = this->get_parameter("angular_gain").as_double();
 
     // If ball found then compute speed
     if(bounding_box->ball_found)
@@ -132,6 +129,8 @@ void RELbotControl::bounding_box_center(const sensor_msgs::msg::Image::SharedPtr
 void RELbotControl::debug_image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
 {
     // Publish debug visualization if enabled
+    debug_visualization_ = this->get_parameter("debug_visualization").as_bool();
+
     if(!debug_visualization_)
     {
         return;
