@@ -63,6 +63,13 @@ Run the main node to compute the speed etc.
 ros2 run ros2_relbot_control relbot_control
 ```
 
+To check the twist velocity of the motors run one of the commands
+```bash
+ros2 topic echo /twist_vel
+ros2 topic echo /input/right_motor/setpoint_vel
+ros2 topic echo /input/left_motor/setpoint_vel
+```
+
 #### Control params
 Change the size of the ball
 ```bash

@@ -4,6 +4,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "custom_msg/msg/bounding_box.hpp"
 #include "sensor_msgs/msg/image.hpp"
+#include "std_msgs/msg/float64.hpp"
 #include "geometry_msgs/msg/twist_stamped.hpp"
 
 class RELbotControl: public rclcpp::Node
@@ -20,7 +21,6 @@ class RELbotControl: public rclcpp::Node
 
     private:
         /// Callback functions.
-        /**
         /**
          * @brief Callback function for controlling the robot based on bounding box information.
          * 
@@ -68,8 +68,8 @@ class RELbotControl: public rclcpp::Node
         /// Publisher variables.
         rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr publisher_twist_;
         rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr debug_publisher_;
-
-        // TODO Add wheel publishers for the relbot
+        rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr publisher_right_vel_;
+        rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr publisher_left_vel_;
 };
 
 #endif /* RELBOT_CONTROL_HPP */

@@ -3,6 +3,7 @@
 #include "sensor_msgs/msg/image.hpp"
 #include "geometry_msgs/msg/twist_stamped.hpp"
 #include "sensor_msgs/image_encodings.hpp"
+#include "std_msgs/msg/float64.hpp"
 #include "cv_bridge/cv_bridge.h"
 #include "opencv2/opencv.hpp"
 #include "../include/ros2_relbot_control/RELbotControl.hpp"
@@ -16,10 +17,6 @@
  */
 RELbotControl::RELbotControl() : Node("relbot_control")
 {
-    // Initialize the fields
-    reference_bounding_box.center_point_x = 0.0;
-    reference_bounding_box.center_point_y = 0.0;
-
     /// RELbot control
     // Subscribe to the /bounding_box topic
     subscription_box_ = this->create_subscription<custom_msg::msg::BoundingBox>
@@ -27,11 +24,19 @@ RELbotControl::RELbotControl() : Node("relbot_control")
 
     // Subscribe to the /image topic to update the center of the reference bounding box
     subscription_image_ = this->create_subscription<sensor_msgs::msg::Image>
-        ("/debug_image",10,std::bind(&RELbotControl::bounding_box_center, this, std::placeholders::_1));
+        ("/image",10,std::bind(&RELbotControl::bounding_box_center, this, std::placeholders::_1));
 
     // Create publisher for TwistStamped messages
     publisher_twist_ = this->create_publisher<geometry_msgs::msg::TwistStamped>
-        ("/cmd_vel", 10);
+        ("/twist_vel", 10);
+
+    // Create a publisher for the right motor angular velocity 
+    publisher_right_vel_ = this->create_publisher<std_msgs::msg::Float64>
+        ("/input/right_motor/setpoint_vel", 10);
+
+    // Create a publisher for the left motor angular velocity 
+    publisher_left_vel_ = this->create_publisher<std_msgs::msg::Float64>
+        ("/input/left_motor/setpoint_vel", 10);
 
     /// Image debug
     // Subscriber to \debug_image topic 
@@ -60,8 +65,10 @@ RELbotControl::RELbotControl() : Node("relbot_control")
  */
 void RELbotControl::control_callback(const custom_msg::msg::BoundingBox::SharedPtr bounding_box)
 {
-    // Create TwistStamped message
+    // Init all the messages
     auto twist_msg = std::make_shared<geometry_msgs::msg::TwistStamped>();
+    auto omega_left = std::make_shared<std_msgs::msg::Float64>();
+    auto omega_right = std::make_shared<std_msgs::msg::Float64>();
 
     // Check for parameters updates
     reference_bounding_box.height = this->get_parameter("ball_size").as_int();
@@ -83,8 +90,8 @@ void RELbotControl::control_callback(const custom_msg::msg::BoundingBox::SharedP
         // Calculate target angular velocities for both wheels
         double wheel_base = 0.5; // distance between the wheels (in meters)
         double wheel_radius = 0.1; // radius of the wheels (in meters)
-        double omega_left = (linear_velocity - (angular_velocity * wheel_base / 2)) / wheel_radius;
-        double omega_right = (linear_velocity + (angular_velocity * wheel_base / 2)) / wheel_radius;
+        omega_left->data = (linear_velocity - (angular_velocity * wheel_base / 2)) / wheel_radius;
+        omega_right->data = (linear_velocity + (angular_velocity * wheel_base / 2)) / wheel_radius;
 
         // Add data to the TwistStamped message
         twist_msg->header.stamp = this->now();
@@ -95,10 +102,9 @@ void RELbotControl::control_callback(const custom_msg::msg::BoundingBox::SharedP
     // Publish TwistStamped message
     publisher_twist_->publish(*twist_msg);
 
-    // TODO
     // Publish individual motor commands (angular velocities)
-    // You need to implement this part based on your robot's interface
-    //publish_motor_commands(omega_left, omega_right); 
+    publisher_right_vel_->publish(*omega_right);
+    publisher_left_vel_->publish(*omega_left);
 }
 
 /**
