@@ -31,11 +31,11 @@ RELbotControl::RELbotControl() : Node("relbot_control")
         ("/cmd_vel", 10);
 
     // Create a publisher for the right motor angular velocity 
-    publisher_right_vel_ = this->create_publisher<std_msgs::msg::Float64>
+    publisher_right_vel_ = this->create_publisher<example_interfaces::msg::Float64>
         ("/input/right_motor/setpoint_vel", 10);
 
     // Create a publisher for the left motor angular velocity 
-    publisher_left_vel_ = this->create_publisher<std_msgs::msg::Float64>
+    publisher_left_vel_ = this->create_publisher<example_interfaces::msg::Float64>
         ("/input/left_motor/setpoint_vel", 10);
 
     /// Image debug
@@ -67,8 +67,8 @@ void RELbotControl::control_callback(const custom_msg::msg::BoundingBox::SharedP
 {
     // Init all the messages
     auto twist_msg = std::make_shared<geometry_msgs::msg::TwistStamped>();
-    auto omega_left = std::make_shared<std_msgs::msg::Float64>();
-    auto omega_right = std::make_shared<std_msgs::msg::Float64>();
+    auto omega_left = std::make_shared<example_interfaces::msg::Float64>();
+    auto omega_right = std::make_shared<example_interfaces::msg::Float64>();
 
     // Check for parameters updates
     reference_bounding_box.height = this->get_parameter("ball_size").as_int();

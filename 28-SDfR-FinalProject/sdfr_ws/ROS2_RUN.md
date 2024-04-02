@@ -1,4 +1,5 @@
-## To run the first asssignment
+# Step by step method
+## To run the first asssignment 
 
 Run the node of the camera to image
 ```bash
