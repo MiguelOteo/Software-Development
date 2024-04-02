@@ -3,7 +3,7 @@
 #include "sensor_msgs/msg/image.hpp"
 #include "geometry_msgs/msg/twist_stamped.hpp"
 #include "sensor_msgs/image_encodings.hpp"
-#include "std_msgs/msg/float64.hpp"
+#include "example_interfaces/msg/float64.hpp"
 #include "cv_bridge/cv_bridge.h"
 #include "opencv2/opencv.hpp"
 #include "../include/ros2_relbot_control/RELbotControl.hpp"
@@ -28,7 +28,7 @@ RELbotControl::RELbotControl() : Node("relbot_control")
 
     // Create publisher for TwistStamped messages
     publisher_twist_ = this->create_publisher<geometry_msgs::msg::TwistStamped>
-        ("/twist_vel", 10);
+        ("/cmd_vel", 10);
 
     // Create a publisher for the right motor angular velocity 
     publisher_right_vel_ = this->create_publisher<std_msgs::msg::Float64>

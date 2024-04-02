@@ -103,7 +103,12 @@ cv::Mat BallDetection::detect_balls(const cv::Mat& image)
 
     // Prepare message to publish
     auto bounding_box_msg = std::make_unique<custom_msg::msg::BoundingBox>();
-    bounding_box_msg->ball_found = !contours.empty(); // Check if any contours were found
+
+    if(contours.empty()) // Check if any contours were found if not skip cycle
+    {
+        publisher_->publish(std::move(bounding_box_msg)); 
+        return image;
+    } 
 
     // Draw bounding boxes around detected balls
     for (const auto& contour : contours)
@@ -118,6 +123,7 @@ cv::Mat BallDetection::detect_balls(const cv::Mat& image)
         if (aspect_ratio >= 0.9 && aspect_ratio <= 1.1)
         {
             // Fill in message data
+            bounding_box_msg->ball_found = true;
             bounding_box_msg->center_point_x = (bounding_rect.x + bounding_rect.width/2);
             bounding_box_msg->center_point_y = (bounding_rect.y + bounding_rect.height/2);
             bounding_box_msg->width = bounding_rect.width;

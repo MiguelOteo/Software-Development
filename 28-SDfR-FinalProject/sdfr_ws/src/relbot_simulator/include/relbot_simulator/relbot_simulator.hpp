@@ -10,7 +10,7 @@
 #include "rclcpp/rclcpp.hpp"
 
 // Standard Message types
-#include "std_msgs/msg/float64.hpp"
+#include "example_interfaces/msg/float64.hpp"
 
 // Sensor message types related to images
 #include "sensor_msgs/msg/image.hpp"
@@ -70,14 +70,14 @@ public:
 
   // Default input topic names
   const std::string CMD_VEL_TOPIC = input + "/cmd_vel";
-  const std::string SETPOINT_VEL_TOPIC = input + "/setpoint_vel";
+  const std::string SETPOINT_VEL_TOPIC = "/setpoint_vel";
   const std::string RIGHT_MOTOR_NAMESPACE = input + "/right_motor";
   const std::string LEFT_MOTOR_NAMESPACE = input + "/left_motor";
   const std::string JOINT_STATES_TOPIC = input + "/joint_states";
   const std::string WEBCAM_IMAGE = "/image";
 
   // Default ouput topic names
-  const std::string CAMERA_POSITION = output + "output/camera_position";
+  const std::string CAMERA_POSITION = output + "/camera_position";
   const std::string ROBOT_POSE = output + "/pose";
 
   // Default parameter values
@@ -102,8 +102,8 @@ private:
 
   // Subscribers for motor commands
   rclcpp::Subscription<geometry_msgs::msg::TwistStamped>::SharedPtr cmdVelSubscriber_;
-  rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr rightMotorSetpointVelSubscriber_;
-  rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr leftMotorSetpointVelSubscriber_;
+  rclcpp::Subscription<example_interfaces::msg::Float64>::SharedPtr rightMotorSetpointVelSubscriber_;
+  rclcpp::Subscription<example_interfaces::msg::Float64>::SharedPtr leftMotorSetpointVelSubscriber_;
 
   // // Publisher for joint state
 
@@ -161,7 +161,7 @@ private:
    *
    * @param setpoinVel setpoint velocity for right motor
    */
-  void rightMotorSetpointVelCallback(const std_msgs::msg::Float64::SharedPtr setpointVel);
+  void rightMotorSetpointVelCallback(const example_interfaces::msg::Float64::SharedPtr setpointVel);
 
   /**
    * @brief Callback upon receiving the left motor command velocity. Stores this command internally for the next
@@ -169,6 +169,6 @@ private:
    *
    * @param setpiontVel setpoint velocity for left motor
    */
-  void leftMotorSetpointVelCallback(const std_msgs::msg::Float64::SharedPtr setpointVel);
+  void leftMotorSetpointVelCallback(const example_interfaces::msg::Float64::SharedPtr setpointVel);
 };
 #endif /* RELBOT_SIMULATOR_HPP_ */

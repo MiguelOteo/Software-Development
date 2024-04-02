@@ -10,7 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(std_msgs REQUIRED)
+find_package(example_interfaces REQUIRED)
 find_package(custom_msg REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(image_transport REQUIRED)
@@ -27,7 +27,7 @@ ament_target_dependencies(
   sensor_msgs
   geometry_msgs
   custom_msg
-  std_msgs
+  example_interfaces
   cv_bridge
   image_transport
   OpenCV

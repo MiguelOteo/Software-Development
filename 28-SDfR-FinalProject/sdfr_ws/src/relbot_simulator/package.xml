@@ -13,7 +13,7 @@
   <exec_depend>ros2launch</exec_depend>
   
   <depend>rclcpp</depend>
-  <depend>std_msgs</depend>
+  <depend>example_interfaces</depend>
   <depend>sensor_msgs</depend>
   <depend>geometry_msgs</depend>
 

@@ -4,7 +4,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "custom_msg/msg/bounding_box.hpp"
 #include "sensor_msgs/msg/image.hpp"
-#include "std_msgs/msg/float64.hpp"
+#include "example_interfaces/msg/float64.hpp"
 #include "geometry_msgs/msg/twist_stamped.hpp"
 
 class RELbotControl: public rclcpp::Node

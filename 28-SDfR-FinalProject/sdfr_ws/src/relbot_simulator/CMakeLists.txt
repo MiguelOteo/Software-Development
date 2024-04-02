@@ -14,7 +14,7 @@ add_compile_options(-Wno-psabi) # Suppress warnings about ABI changes in GCC 7.1
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
+find_package(example_interfaces REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(OpenCV REQUIRED COMPONENTS core highgui imgcodecs imgproc videoio)
@@ -33,7 +33,7 @@ src/dynamics_simulation.cpp)
 
 ament_target_dependencies(relbot_simulator 
   rclcpp 
-  std_msgs 
+  example_interfaces 
   sensor_msgs 
   geometry_msgs
   cv_bridge
@@ -44,7 +44,7 @@ $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include>)
 target_compile_features(relbot_simulator PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 target_link_libraries(${PROJECT_NAME}
-  ${sensor_msgs_TARGETS}
+  ${example_interfaces_TARGETS}
   ${std_msgs_TARGETS}
   ${OpenCV_LIBS})
 

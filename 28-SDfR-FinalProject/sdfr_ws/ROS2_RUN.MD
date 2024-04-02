@@ -99,6 +99,11 @@ ros2 run rqt_image_view rqt_image_view
 ```
 Select the output \debug_image_control
 
+## Run the simulator
+Run this command to run the simulator
+```bash
+ros2 launch relbot_simulator relbot_simulator.launch.py
+```
 
 ## Remember 
 On every console opened run the command

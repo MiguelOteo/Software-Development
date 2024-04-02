@@ -50,14 +50,14 @@ void RELbotSimulator::create_topics()
     // The motor topics are in a namespace, construct the full topic name first
     const std::string right_motor_setpoint_vel_topic =
         RELbotSimulator::RIGHT_MOTOR_NAMESPACE + RELbotSimulator::SETPOINT_VEL_TOPIC;
-    RELbotSimulator::rightMotorSetpointVelSubscriber_ = create_subscription<std_msgs::msg::Float64>(
+    RELbotSimulator::rightMotorSetpointVelSubscriber_ = create_subscription<example_interfaces::msg::Float64>(
         right_motor_setpoint_vel_topic, 10,
         std::bind(&RELbotSimulator::rightMotorSetpointVelCallback, this, std::placeholders::_1));
     RCLCPP_INFO(get_logger(), "Subscribed to topic %s", right_motor_setpoint_vel_topic.c_str());
 
     const std::string left_motor_setpoint_vel_topic =
         RELbotSimulator::LEFT_MOTOR_NAMESPACE + RELbotSimulator::SETPOINT_VEL_TOPIC;
-    RELbotSimulator::leftMotorSetpointVelSubscriber_ = create_subscription<std_msgs::msg::Float64>(
+    RELbotSimulator::leftMotorSetpointVelSubscriber_ = create_subscription<example_interfaces::msg::Float64>(
         left_motor_setpoint_vel_topic, 10,
         std::bind(&RELbotSimulator::leftMotorSetpointVelCallback, this, std::placeholders::_1));
     RCLCPP_INFO(get_logger(), "Subscribed to topic %s", left_motor_setpoint_vel_topic.c_str());
@@ -165,13 +165,13 @@ void RELbotSimulator::cmdVelCallback(const geometry_msgs::msg::TwistStamped::Sha
   dynamics_simulation_.set_vel_left_motor_set_point((linearVelSetpoint - angularVelSetpoint * wheelBaseWidth_ / 2) / wheelRadius_);
 }
 
-void RELbotSimulator::rightMotorSetpointVelCallback(const std_msgs::msg::Float64::SharedPtr setpointVel)
+void RELbotSimulator::rightMotorSetpointVelCallback(const example_interfaces::msg::Float64::SharedPtr setpointVel)
 {
   dynamics_simulation_.set_vel_right_motor_set_point(setpointVel->data);
   // velRightMotorSetpoint_ = setpointVel->data;
 }
 
-void RELbotSimulator::leftMotorSetpointVelCallback(const std_msgs::msg::Float64::SharedPtr setpointVel)
+void RELbotSimulator::leftMotorSetpointVelCallback(const example_interfaces::msg::Float64::SharedPtr setpointVel)
 {
   dynamics_simulation_.set_vel_left_motor_set_point(setpointVel->data);
   // velLeftMotorSetpoint_ = setpointVel->data;
@@ -191,6 +191,7 @@ void RELbotSimulator::dynamics_timer_callback()
   robot_pose.pose.orientation.set__z(dynamics_simulation_.get_theta());
 
   // Output the actual position
+  robot_pose_topic->publish(robot_pose);
 
   // RCLCPP_INFO(this->get_logger(), "Dynamics timer!   [x,y] = [%f,%f]", pos.x, pos.y);
 }
