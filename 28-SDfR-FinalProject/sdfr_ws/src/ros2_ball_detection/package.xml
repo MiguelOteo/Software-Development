@@ -14,10 +14,9 @@
 
   <depend>rclcpp</depend>
   <depend>sensor_msgs</depend>
-  <depend>custom_msg</depend>
-  <depend>cv_bridge</depend>
+  <depend>relbot_interfaces</depend>
   <depend>image_transport</depend>
-  <depend>OpenCV</depend>
+  <depend>image_functions_sdfr</depend>
 
   <export>
     <build_type>ament_cmake</build_type>

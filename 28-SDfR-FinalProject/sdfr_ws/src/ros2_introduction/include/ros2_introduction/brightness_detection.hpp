@@ -6,9 +6,8 @@
 #include <rclcpp/rclcpp.hpp>
 
 #include "sensor_msgs/msg/image.hpp"
-#include "example_interfaces/msg/int8.hpp"
+#include "example_interfaces/msg/u_int8.hpp"
 #include "example_interfaces/msg/string.hpp"
-#include "custom_msg/msg/brightness_status.hpp"
 
 // Placeholder for std::bind.
 using std::placeholders::_1;
@@ -49,11 +48,11 @@ private:
     int threshold_ = 100; // Example threshold value, you should define the appropriate threshold for your application.
 
     /// Subscriber variables.
-    rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subcription_;
+    rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr camimage_subscription_;
 
     /// Publisher variables.
-    rclcpp::Publisher<example_interfaces::msg::Int8>::SharedPtr light_level_publisher_;
-    rclcpp::Publisher<custom_msg::msg::BrightnessStatus>::SharedPtr brightness_status_publisher_;
+    rclcpp::Publisher<example_interfaces::msg::UInt8>::SharedPtr light_level_publisher_;
+    rclcpp::Publisher<example_interfaces::msg::String>::SharedPtr brightness_status_publisher_;
 
 };
 

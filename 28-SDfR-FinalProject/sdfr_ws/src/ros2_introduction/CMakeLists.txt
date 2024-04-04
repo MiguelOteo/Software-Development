@@ -11,16 +11,22 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(image_functions_sdfr REQUIRED)
-find_package(custom_msg REQUIRED)
+find_package(relbot_interfaces REQUIRED)
 include_directories(include)
 
+# Add brightness_detection executable
 add_executable(brightness_detection src/brightness_detection.cpp)
-ament_target_dependencies(brightness_detection rclcpp sensor_msgs example_interfaces image_functions_sdfr custom_msg)
+ament_target_dependencies(brightness_detection rclcpp sensor_msgs example_interfaces image_functions_sdfr relbot_interfaces)
+
+# Add custom_brightness_detection executable
+add_executable(custom_brightness_detection src/custom_brightness_detection.cpp)
+ament_target_dependencies(custom_brightness_detection rclcpp sensor_msgs example_interfaces image_functions_sdfr relbot_interfaces)
 
 # Install targets
 install(
   TARGETS 
     brightness_detection
+    custom_brightness_detection
     DESTINATION lib/${PROJECT_NAME}
 )
 

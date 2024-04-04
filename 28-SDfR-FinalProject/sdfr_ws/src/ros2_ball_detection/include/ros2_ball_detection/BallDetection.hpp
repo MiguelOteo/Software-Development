@@ -3,10 +3,8 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/image.hpp"
-#include "custom_msg/msg/bounding_box.hpp"
-#include "cv_bridge/cv_bridge.h"
+#include "relbot_interfaces/msg/bounding_box.hpp"
 #include "sensor_msgs/image_encodings.hpp"
-#include <opencv2/opencv.hpp>
 
 /**
  * @brief Class for detecting balls in images and publishing bounding box information.
@@ -31,39 +29,56 @@ class BallDetection: public rclcpp::Node
     private:
         /// Callback functions.
         /**
-         * @brief Callback function for processing images received from ROS messages.
+         * @brief Callback function triggered upon receiving an image from the webcam for ball detection.
          * 
-         * This function converts a ROS image message to an OpenCV Mat, performs ball detection
-         * on the image, and publishes the detected image if debug visualization is enabled.
-         *
-         * @param msg The ROS image message received.
+         * This function performs ball detection algorithm on the received image, 
+         * publishes a debug image if debug visualization is enabled, and publishes the 
+         * detected bounding box of the ball.
+         * 
+         * @param image A shared pointer to sensor_msgs::msg::Image 
+         *  message containing the image data from the webcam.
          */
-        void image_callback(const sensor_msgs::msg::Image::SharedPtr msg);
+        void ball_detection_callback
+            (const sensor_msgs::msg::Image::SharedPtr image);
 
-        /// Other methods
         /**
-         * @brief Detects balls in the input image and draws bounding boxes around them.
+         * @brief Main function for ball detection algorithm.
          * 
-         * This function takes an input image, converts it to the HSV color space, and segments
-         * the image to detect balls based on predefined color ranges. It then performs morphological
-         * operations to clean up the mask, finds contours of the detected balls, and draws bounding
-         * boxes around them. Additionally, it publishes a message containing information about the
-         * detected balls if any are found.
-         *
-         * @param image The input image in BGR color space.
-         * @return A modified image with bounding boxes drawn around detected balls.
+         * This function takes in the dimensions of the image and the image data,
+         * and returns a shared pointer to a BoundingBox message indicating the detected ball's location.
+         * 
+         * @param sizeX The width of the image.
+         * @param sizeY The height of the image.
+         * @param image A shared pointer to the image message.
+         * @return A shared pointer to a BoundingBox message indicating the detected ball's location.
          */
-        cv::Mat detect_balls(const cv::Mat& image);
+        const relbot_interfaces::msg::BoundingBox::SharedPtr ball_detection_algorithm
+            (int sizeX, int sizeY, const sensor_msgs::msg::Image::SharedPtr image);
+
+        /**
+         * @brief Publishes a debug image with a bounding box drawn around the detected ball.
+         * 
+         * If the ball is not found in the bounding box message, the original 
+         * image is published without any modifications.
+         * 
+         * @param image A shared pointer to sensor_msgs::msg::Image 
+         *  message containing the original image data.
+         * @param bounding_box_msg A shared pointer to relbot_interfaces::msg::BoundingBox 
+         *  message representing the detected bounding box of the ball.
+         */
+        void publish_debug_image
+            (const sensor_msgs::msg::Image::SharedPtr image, 
+             relbot_interfaces::msg::BoundingBox::SharedPtr bounding_box_msg);
 
         /// Private variables.
         bool debug_visualization_;
 
         /// Subscriber variables.
-        rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
+        rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr camimage_subscription_;
 
         /// Publisher variables.
-        rclcpp::Publisher<custom_msg::msg::BoundingBox>::SharedPtr publisher_;
-        rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr debug_publisher_;
+        rclcpp::Publisher<relbot_interfaces::msg::BoundingBox>::SharedPtr bounding_box_publisher_;
+        rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr debug_image_publisher_;
 };
 
 #endif /* BALL_DETECTION_HPP */

@@ -2,7 +2,7 @@
 #define RELBOT_CONTROL_HPP
 
 #include "rclcpp/rclcpp.hpp"
-#include "custom_msg/msg/bounding_box.hpp"
+#include "relbot_interfaces/msg/bounding_box.hpp"
 #include "sensor_msgs/msg/image.hpp"
 #include "example_interfaces/msg/float64.hpp"
 #include "geometry_msgs/msg/twist_stamped.hpp"
@@ -30,20 +30,19 @@ class RELbotControl: public rclcpp::Node
          *
          * @param bounding_box A shared pointer to the bounding box message.
          */
-        void control_callback(const custom_msg::msg::BoundingBox::SharedPtr bounding_box);
+        void control_callback(const relbot_interfaces::msg::BoundingBox::SharedPtr bounding_box);
 
         /**
          * @brief Callback function for processing debug images.
          * 
          * This function is called whenever a new debug image message is received. 
-         * If debug visualization is enabled, it converts the received ROS image message 
-         * to an OpenCV Mat, draws a rectangle overlay on the image representing the 
-         * reference bounding box, and publishes the debug image.
+         * If debug visualization is enabled, it draws a rectangle overlay on the image representing the 
+         * reference bounding box and publishes the debug image.
          *
-         * @param msg A shared pointer to the debug image message.
+         * @param image A shared pointer to the debug image message.
          */
-        void debug_image_callback(const sensor_msgs::msg::Image::SharedPtr msg);
-        
+        void debug_image_callback(const sensor_msgs::msg::Image::SharedPtr image);
+
         /**
          * @brief Callback function for updating the center of the reference bounding box.
          * 
@@ -52,22 +51,22 @@ class RELbotControl: public rclcpp::Node
          *
          * @param msg A shared pointer to the image message.
          */
-        void bounding_box_center(const sensor_msgs::msg::Image::SharedPtr msg);
+        void bounding_box_center(const sensor_msgs::msg::Image::SharedPtr image);
 
         /// Private variables.
         bool debug_visualization_;
-        custom_msg::msg::BoundingBox reference_bounding_box;
+        relbot_interfaces::msg::BoundingBox reference_bounding_box;
         double linear_gain_;
         double angular_gain_;
 
         /// Subscriber variables.
-        rclcpp::Subscription<custom_msg::msg::BoundingBox>::SharedPtr subscription_box_;
+        rclcpp::Subscription<relbot_interfaces::msg::BoundingBox>::SharedPtr subscription_box_;
         rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_image_;
         rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr debug_subscription_;
 
         /// Publisher variables.
         rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr publisher_twist_;
-        rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr debug_publisher_;
+        rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr debug_image_publisher_;
         rclcpp::Publisher<example_interfaces::msg::Float64>::SharedPtr publisher_right_vel_;
         rclcpp::Publisher<example_interfaces::msg::Float64>::SharedPtr publisher_left_vel_;
 };

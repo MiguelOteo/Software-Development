@@ -9,7 +9,8 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(custom_msg REQUIRED)
+find_package(relbot_interfaces REQUIRED)
+find_package(image_functions_sdfr REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -17,17 +18,19 @@ find_package(OpenCV REQUIRED)
 include_directories(include)
 
 # Add executable
-add_executable(ball_detection src/BallDetection.cpp)
+add_executable(ball_detection 
+  src/BallDetection.cpp
+  src/RGBtoHSV.cpp  # Add this line
+)
 
 # Link dependencies
 ament_target_dependencies(
   ball_detection
+  image_functions_sdfr
   rclcpp
   sensor_msgs
-  custom_msg
-  cv_bridge
+  relbot_interfaces
   image_transport
-  OpenCV
 )
 
 # Install executable
@@ -36,10 +39,15 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
+# Install launch files
+install(DIRECTORY 
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 # Install header files
 install(DIRECTORY include/
   DESTINATION include
 )
 
 ament_package()
-

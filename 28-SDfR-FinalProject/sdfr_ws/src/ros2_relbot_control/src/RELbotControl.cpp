@@ -1,12 +1,14 @@
 #include "rclcpp/rclcpp.hpp"
-#include "custom_msg/msg/bounding_box.hpp"
+#include "relbot_interfaces/msg/bounding_box.hpp"
 #include "sensor_msgs/msg/image.hpp"
 #include "geometry_msgs/msg/twist_stamped.hpp"
 #include "sensor_msgs/image_encodings.hpp"
+#include "image_functions_sdfr/image_functions.hpp"
 #include "example_interfaces/msg/float64.hpp"
-#include "cv_bridge/cv_bridge.h"
-#include "opencv2/opencv.hpp"
 #include "../include/ros2_relbot_control/RELbotControl.hpp"
+
+// Set the color of the reference bounding box BGR
+const int REFERENCE_RGB_BOX[3] = {185, 84, 79};
 
 /**
  * @brief Constructor for the RELbotControl class.
@@ -19,7 +21,7 @@ RELbotControl::RELbotControl() : Node("relbot_control")
 {
     /// RELbot control
     // Subscribe to the /bounding_box topic
-    subscription_box_ = this->create_subscription<custom_msg::msg::BoundingBox>
+    subscription_box_ = this->create_subscription<relbot_interfaces::msg::BoundingBox>
         ("/bounding_box", 10, std::bind(&RELbotControl::control_callback, this, std::placeholders::_1));
 
     // Subscribe to the /image topic to update the center of the reference bounding box
@@ -44,7 +46,7 @@ RELbotControl::RELbotControl() : Node("relbot_control")
         ("/debug_image",10,std::bind(&RELbotControl::debug_image_callback, this, std::placeholders::_1));
 
     // Publish debug images
-    debug_publisher_ = this->create_publisher<sensor_msgs::msg::Image>
+    debug_image_publisher_ = this->create_publisher<sensor_msgs::msg::Image>
         ("/debug_image_control",10);
 
     // Initialize parameters
@@ -63,7 +65,7 @@ RELbotControl::RELbotControl() : Node("relbot_control")
  *
  * @param bounding_box A shared pointer to the bounding box message.
  */
-void RELbotControl::control_callback(const custom_msg::msg::BoundingBox::SharedPtr bounding_box)
+void RELbotControl::control_callback(const relbot_interfaces::msg::BoundingBox::SharedPtr bounding_box)
 {
     // Init all the messages
     auto twist_msg = std::make_shared<geometry_msgs::msg::TwistStamped>();
@@ -79,8 +81,21 @@ void RELbotControl::control_callback(const custom_msg::msg::BoundingBox::SharedP
     // If ball found then compute speed
     if(bounding_box->ball_found)
     {
-        // Calculate errors
-        double size_error = reference_bounding_box.width - bounding_box->width;
+        // Calculate the size error for the linear speed
+        // Check if width or height is bigger
+        double size_error = 0.0;
+        if(bounding_box->width >= bounding_box->height)
+        {
+            // If width is bigger then use it for size reference
+            size_error = reference_bounding_box.width - bounding_box->width;
+        }
+        else
+        {
+            // If height is bigger then use it for size reference
+            size_error = reference_bounding_box.height - bounding_box->height;
+        }
+        
+        // Calculate the error for the rotation
         double center_error = reference_bounding_box.center_point_x - bounding_box->center_point_x; 
 
         // Calculate command velocities
@@ -126,13 +141,12 @@ void RELbotControl::bounding_box_center(const sensor_msgs::msg::Image::SharedPtr
  * @brief Callback function for processing debug images.
  * 
  * This function is called whenever a new debug image message is received. 
- * If debug visualization is enabled, it converts the received ROS image message 
- * to an OpenCV Mat, draws a rectangle overlay on the image representing the 
- * reference bounding box, and publishes the debug image.
+ * If debug visualization is enabled, it draws a rectangle overlay on the image representing the 
+ * reference bounding box and publishes the debug image.
  *
- * @param msg A shared pointer to the debug image message.
+ * @param image A shared pointer to the debug image message.
  */
-void RELbotControl::debug_image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
+void RELbotControl::debug_image_callback(const sensor_msgs::msg::Image::SharedPtr image)
 {
     // Publish debug visualization if enabled
     debug_visualization_ = this->get_parameter("debug_visualization").as_bool();
@@ -142,28 +156,38 @@ void RELbotControl::debug_image_callback(const sensor_msgs::msg::Image::SharedPt
         return;
     }
 
-    // Convert ROS image message to OpenCV Mat
-    cv_bridge::CvImagePtr cv_ptr;
-    try
-    {
-        cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-    }
-    catch (cv_bridge::Exception& e)
-    {
-        RCLCPP_ERROR(this->get_logger(), "cv_bridge exception: %s", e.what());
-        return;
-    }
+    sensor_msgs::msg::Image::SharedPtr debug_image = std::make_shared<sensor_msgs::msg::Image>();  
+    image_functions::copyImageProperties(debug_image, image);
 
-    // Draw the rectangle overlay
-    cv::rectangle(cv_ptr->image,
-        cv::Point(reference_bounding_box.center_point_x - reference_bounding_box.width / 2, 
-                  reference_bounding_box.center_point_y - reference_bounding_box.height / 2),
-        cv::Point(reference_bounding_box.center_point_x + reference_bounding_box.width / 2, 
-                  reference_bounding_box.center_point_y + reference_bounding_box.height / 2),
-        cv::Scalar(191, 142, 108), 1);
+    // Get the coordinates of the bounding box
+    int min_x = reference_bounding_box.center_point_x - reference_bounding_box.width/2;
+    int max_x = reference_bounding_box.center_point_x + reference_bounding_box.width/2;
+    int min_y = reference_bounding_box.center_point_y - reference_bounding_box.height/2;
+    int max_y = reference_bounding_box.center_point_y + reference_bounding_box.height/2;
+
+    // Print a bounding box on the image to display as a debug image
+    for (int x = min_x; x < max_x; x++)
+    {
+        // If first or last column then skip the inside painting
+        if(x != min_x && x != max_x-1)
+        {
+            image_functions::setPixelColor
+                (debug_image, x, min_y, REFERENCE_RGB_BOX[2], REFERENCE_RGB_BOX[1], REFERENCE_RGB_BOX[0]);
+            image_functions::setPixelColor
+                (debug_image, x, max_y-1, REFERENCE_RGB_BOX[2], REFERENCE_RGB_BOX[1], REFERENCE_RGB_BOX[0]);
+            continue;
+        }        
+
+        // If it is the first or last column draw all the column points
+        for (int y = min_y; y < max_y; y++)
+        {
+            image_functions::setPixelColor
+                (debug_image, x, y, REFERENCE_RGB_BOX[2], REFERENCE_RGB_BOX[1], REFERENCE_RGB_BOX[0]);
+        }
+    }
 
     // Publish the debug image with the detected contour and the reference one
-    debug_publisher_->publish(*cv_ptr->toImageMsg());
+    debug_image_publisher_->publish(std::move(*debug_image)); 
 }
 
 /**

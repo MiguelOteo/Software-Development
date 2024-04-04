@@ -11,10 +11,9 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(example_interfaces REQUIRED)
-find_package(custom_msg REQUIRED)
-find_package(cv_bridge REQUIRED)
+find_package(relbot_interfaces REQUIRED)
+find_package(image_functions_sdfr REQUIRED)
 find_package(image_transport REQUIRED)
-find_package(OpenCV REQUIRED)
 
 include_directories(include)
 
@@ -26,11 +25,10 @@ ament_target_dependencies(
   rclcpp
   sensor_msgs
   geometry_msgs
-  custom_msg
+  relbot_interfaces
   example_interfaces
-  cv_bridge
+  image_functions_sdfr
   image_transport
-  OpenCV
 )
 
 # Install executable

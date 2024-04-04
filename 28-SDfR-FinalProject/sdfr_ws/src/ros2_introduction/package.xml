@@ -15,7 +15,7 @@
     <depend>sensor_msgs</depend>
     <depend>image_functions_sdfr</depend>
     <depend>example_interfaces</depend>
-    <depend>custom_msg</depend>
+    <depend>relbot_interfaces</depend>
 
     <test_depend>ament_lint_auto</test_depend>
     <test_depend>ament_lint_common</test_depend>
