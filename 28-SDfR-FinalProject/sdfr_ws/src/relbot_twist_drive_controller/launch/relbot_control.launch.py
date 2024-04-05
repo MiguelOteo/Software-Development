@@ -22,7 +22,7 @@ def generate_launch_description():
 
         # Run the node for the ball detection
         Node(
-            package='ros2_ball_detection',
+            package='ball_detection',
             executable='ball_detection',
             name='ball_detection',
                 parameters=[
@@ -33,7 +33,7 @@ def generate_launch_description():
 
         # Run the node for the RELbot control to compute its inputs
         Node(
-            package='ros2_relbot_control',
+            package='relbot_twist_drive_controller',
             executable='relbot_control',
             name='relbot_control',
                 parameters=[

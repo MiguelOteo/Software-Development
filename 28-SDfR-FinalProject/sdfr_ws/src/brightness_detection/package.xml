@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-    <name>ros2_introduction</name>
+    <name>brightness_detection</name>
     <version>1.0.0</version>
-    <description>This is the ROS 2 introduction package for SDFR. This package was modified by group: XX.</description>
-    <maintainer email="group_member1@emailhere.com">Member name</maintainer>
-    <maintainer email="group_member2@emailhere.com">Member name</maintainer>
-    <license>BSD</license>
-    <author email="j.h.j.pott@student.utwente.nl">Jurrijn Pott</author>
+    <license>Apache License 2.0</license>
+    <description>This node computes the bounding box around a detected object based its color. This package was created by group: 28.</description>
+    <maintainer email="a.arredondo@student.utwente.nl">Álvaro Arredondo</maintainer>
+    <maintainer email="m.oteomarin@student.utwente.nl">Miguel Oteo</maintainer>
+    <author email="a.arredondo@student.utwente.nl">Álvaro Arredondo</author>
+    <author email="m.oteomarin@student.utwente.nl">Miguel Oteo</author>
 
     <buildtool_depend>ament_cmake</buildtool_depend>
 

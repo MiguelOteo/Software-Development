@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>relbot_diff_drive_control</name>
+  <version>1.0.0</version>
+  <license>Apache License 2.0</license>
+  <description>Node to compute the wheels velocities based on the input twisted pairs pairs. This package was created by group: 28.</description>
+  <maintainer email="a.arredondo@student.utwente.nl">Álvaro Arredondo</maintainer>
+  <maintainer email="m.oteomarin@student.utwente.nl">Miguel Oteo</maintainer>
+  <author email="a.arredondo@student.utwente.nl">Álvaro Arredondo</author>
+  <author email="m.oteomarin@student.utwente.nl">Miguel Oteo</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

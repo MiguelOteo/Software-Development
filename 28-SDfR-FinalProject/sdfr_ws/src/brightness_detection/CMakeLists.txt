@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ros2_introduction)
+project(brightness_detection)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -15,12 +15,28 @@ find_package(relbot_interfaces REQUIRED)
 include_directories(include)
 
 # Add brightness_detection executable
-add_executable(brightness_detection src/brightness_detection.cpp)
-ament_target_dependencies(brightness_detection rclcpp sensor_msgs example_interfaces image_functions_sdfr relbot_interfaces)
+add_executable(brightness_detection src/BrightnessDetection.cpp)
+
+ament_target_dependencies(
+  brightness_detection 
+  rclcpp 
+  sensor_msgs 
+  example_interfaces 
+  image_functions_sdfr 
+  relbot_interfaces
+)
 
 # Add custom_brightness_detection executable
-add_executable(custom_brightness_detection src/custom_brightness_detection.cpp)
-ament_target_dependencies(custom_brightness_detection rclcpp sensor_msgs example_interfaces image_functions_sdfr relbot_interfaces)
+add_executable(custom_brightness_detection src/CustomBrightnessDetection.cpp)
+
+ament_target_dependencies(
+  custom_brightness_detection
+  rclcpp 
+  sensor_msgs 
+  example_interfaces 
+  image_functions_sdfr 
+  relbot_interfaces
+)
 
 # Install targets
 install(

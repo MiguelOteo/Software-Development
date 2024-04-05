@@ -22,7 +22,7 @@ def generate_launch_description():
 
         # Run the node for the ball detection
         Node(
-            package='ros2_ball_detection',
+            package='ball_detection',
             executable='ball_detection',
             name='ball_detection',
                 parameters=[

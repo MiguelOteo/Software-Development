@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ros2_ball_detection</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="miguel_oteo@outlook.com">migueloteo</maintainer>
-  <license>TODO: License declaration</license>
+  <name>ball_detection</name>
+  <version>1.0.0</version>
+  <license>Apache License 2.0</license>
+  <description>This node computes the bounding box around a detected object based its color. This package was created by group: 28.</description>
+  <maintainer email="a.arredondo@student.utwente.nl">Álvaro Arredondo</maintainer>
+  <maintainer email="m.oteomarin@student.utwente.nl">Miguel Oteo</maintainer>
+  <author email="a.arredondo@student.utwente.nl">Álvaro Arredondo</author>
+  <author email="m.oteomarin@student.utwente.nl">Miguel Oteo</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

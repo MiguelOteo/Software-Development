@@ -43,8 +43,8 @@ RELbotControl::RELbotControl() : Node("relbot_control")
 
     // Initialize parameters
     this->declare_parameter<bool>("debug_visualization", false);
-    this->declare_parameter<double>("linear_gain", 1.0);
-    this->declare_parameter<double>("angular_gain", 1.0);
+    this->declare_parameter<double>("linear_gain", 0.01);
+    this->declare_parameter<double>("angular_gain", 0.01);
     this->declare_parameter<int>("ball_size", 50.0);
 }
 
@@ -79,12 +79,12 @@ void RELbotControl::control_callback(const relbot_interfaces::msg::BoundingBox::
         if(bounding_box->width >= bounding_box->height)
         {
             // If width is bigger then use it for size reference
-            size_error = bounding_box->width - reference_bounding_box.width;
+            size_error = reference_bounding_box.width - bounding_box->width ;
         }
         else
         {
             // If height is bigger then use it for size reference
-            size_error =  bounding_box->height - reference_bounding_box.height;
+            size_error = reference_bounding_box.height - bounding_box->height;
         }
         
         // Calculate the error for the rotation

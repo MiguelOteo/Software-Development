@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ros2_ball_detection)
+project(ball_detection)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,9 +11,7 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(relbot_interfaces REQUIRED)
 find_package(image_functions_sdfr REQUIRED)
-find_package(cv_bridge REQUIRED)
 find_package(image_transport REQUIRED)
-find_package(OpenCV REQUIRED)
 
 include_directories(include)
 
@@ -26,10 +24,10 @@ add_executable(ball_detection
 # Link dependencies
 ament_target_dependencies(
   ball_detection
-  image_functions_sdfr
   rclcpp
   sensor_msgs
   relbot_interfaces
+  image_functions_sdfr
   image_transport
 )
 

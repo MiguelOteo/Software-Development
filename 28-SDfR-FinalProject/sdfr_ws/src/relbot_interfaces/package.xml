@@ -2,10 +2,13 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>relbot_interfaces</name>
-  <version>0.0.0</version>
-  <description>A ROS 2 package for custom message definitions.</description>
-  <maintainer email="miguel_oteo@outlook.com">migueloteo</maintainer>
+  <version>1.0.0</version>
   <license>Apache License 2.0</license>
+  <description>Main custom intefaces for the RELbot robot</description>
+  <maintainer email="a.arredondo@student.utwente.nl">Álvaro Arredondo</maintainer>
+  <maintainer email="m.oteomarin@student.utwente.nl">Miguel Oteo</maintainer>
+  <author email="a.arredondo@student.utwente.nl">Álvaro Arredondo</author>
+  <author email="m.oteomarin@student.utwente.nl">Miguel Oteo</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

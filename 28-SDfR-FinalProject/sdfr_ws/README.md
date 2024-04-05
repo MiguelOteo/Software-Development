@@ -2,7 +2,7 @@
 ## Run the first assignment
 ```bash
 source install/local_setup.bash
-ros2 launch ros2_ball_detection ball_detection.launch.py
+ros2 launch ball_detection ball_detection.launch.py
 ```
 
 ### Parameters
@@ -14,7 +14,7 @@ ros2 param set ball_detection debug_visualization <true or false>
 ## Run the second assignment
 ```bash
 source install/local_setup.bash
-ros2 launch ros2_relbot_control relbot_control.launch.py
+ros2 launch relbot_twist_drive_controller relbot_control.launch.py
 ```
 
 ### Parameters
@@ -43,7 +43,7 @@ ros2 param set relbot_control debug_visualization <true or false>
 To run the assignment RELbot differential control execute the following command
 ```bash
 source install/local_setup.bash
-ros2 launch relbot_diff_drive_control diff_driver_control.launch.py
+ros2 launch relbot_diff_drive_control diff_drive_control.launch.py
 ```
 
 To check the diff velocities of the motors run one of the commands

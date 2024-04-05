@@ -8,7 +8,7 @@
  * Initializes the DiffDriveController object. Sets up subscriptions to twist messages,
  * creates publishers for motor velocity commands, and initializes parameters.
  */
-DiffDriveController::DiffDriveController() : Node("diff_driver_controller")
+DiffDriveController::DiffDriveController() : Node("diff_drive_controller")
 {
     /// RELbot drive control
     // Create subscriber for TwistStamped messages

@@ -13,10 +13,10 @@ def generate_launch_description():
     # -------- Launched actions --------
     return LaunchDescription([
 
-        # Run the node for the differential driver RELbot control to compute its inputs
+        # Run the node for the differential drive RELbot control to compute its inputs
         Node(
             package='relbot_diff_drive_control',
-            executable='diff_driver_controller',
-            name='diff_driver_controller',
+            executable='diff_drive_controller',
+            name='diff_drive_controller',
         ),
     ])
