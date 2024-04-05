@@ -42,20 +42,6 @@ class BallDetection: public rclcpp::Node
             (const sensor_msgs::msg::Image::SharedPtr image);
 
         /**
-         * @brief Main function for ball detection algorithm.
-         * 
-         * This function takes in the dimensions of the image and the image data,
-         * and returns a shared pointer to a BoundingBox message indicating the detected ball's location.
-         * 
-         * @param sizeX The width of the image.
-         * @param sizeY The height of the image.
-         * @param image A shared pointer to the image message.
-         * @return A shared pointer to a BoundingBox message indicating the detected ball's location.
-         */
-        const relbot_interfaces::msg::BoundingBox::SharedPtr ball_detection_algorithm
-            (int sizeX, int sizeY, const sensor_msgs::msg::Image::SharedPtr image);
-
-        /**
          * @brief Publishes a debug image with a bounding box drawn around the detected ball.
          * 
          * If the ball is not found in the bounding box message, the original 
