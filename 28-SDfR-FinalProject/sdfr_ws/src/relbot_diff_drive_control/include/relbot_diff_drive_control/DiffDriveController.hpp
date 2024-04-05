@@ -11,22 +11,22 @@ class DiffDriveController: public rclcpp::Node
         /**
          * @brief Constructor for the DiffDriveController class.
          * 
-         * Initializes the DiffDriveController object. Sets up subscriptions to topics 
-         * for bounding box and image messages, creates publishers for twist commands 
-         * and debug images, and initializes parameters.
+         * Initializes the DiffDriveController object. Sets up subscriptions 
+         * to twist messages, creates publishers for motor velocity commands, 
+         * and initializes parameters.
          */
         DiffDriveController();
 
     private:
         /// Callback functions.
         /**
-         * @brief Callback function for controlling the robot based on bounding box information.
+         * @brief Callback function for computing differential velocities.
          * 
-         * This function is called whenever a new bounding box message is received. 
-         * It computes the control commands based on the bounding box information and publishes 
-         * TwistStamped messages to control the robot's motion.
+         * This function computes the angular velocities for the left and right wheels
+         * based on linear and angular velocity inputs and publishes them to control
+         * the robot's motion.
          *
-         * @param bounding_box A shared pointer to the bounding box message.
+         * @param rebot_twists A shared pointer to the received TwistStamped message.
          */
         void compute_diff_velocities(const geometry_msgs::msg::TwistStamped::SharedPtr rebot_twists);
 

@@ -67,8 +67,6 @@ ros2 run ros2_relbot_control relbot_control
 To check the twist velocity of the motors run one of the commands
 ```bash
 ros2 topic echo /twist_vel
-ros2 topic echo /input/right_motor/setpoint_vel
-ros2 topic echo /input/left_motor/setpoint_vel
 ```
 
 #### Control params
@@ -99,6 +97,18 @@ Run this command to see the border around the ball on the porcessed image
 ros2 run rqt_image_view rqt_image_view
 ```
 Select the output \debug_image_control
+
+## Run the fourth assignment
+To run the assignment RELbot differential control execute the following command
+```bash
+ros2 launch relbot_diff_drive_control diff_driver_control.launch.py
+```
+
+To check the diff velocities of the motors run one of the commands
+```bash
+ros2 topic echo /input/right_motor/setpoint_vel
+ros2 topic echo /input/left_motor/setpoint_vel
+```
 
 ## Run the simulator
 Run this command to run the simulator
