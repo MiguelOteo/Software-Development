@@ -8,7 +8,7 @@ This package contains the one nodes for computing a bounding box around a detect
 ## Nodes
 
 ### 1. Node Ball Detection 
- - **Description**: This node will publish the bounding box in the following topic: ```\bounding_box```. The node also has a debugging image funtionality which it is published to the topic ```\debug_image```
+ - **Description**: This node will publish the bounding box in the following topic: ```\bounding_box```. The topic belongs to the package ```relbot_interfaces```. The node also has a debugging image funtionality which it is published to the topic ```\debug_image```
    
 - **Run the node**: To run the code use the following command:
 
