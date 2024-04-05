@@ -22,15 +22,8 @@ def generate_launch_description():
 
         # Run the node for the node for brightness detection
         Node(
-            package='ros2_introduction',
+            package='brightness_detection',
             executable='brightness_detection',
             name='brightness_detection',
-        ),
-
-        # Run the node for the ball detection with a custom message
-        Node(
-            package='ros2_introduction',
-            executable='custom_brightness_detection',
-            name='custom_brightness_detection',
         ),
     ])

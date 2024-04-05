@@ -23,7 +23,7 @@ BrightnessDetection::BrightnessDetection() : Node("brightness_detection")
         ("/light_level", 10);
 
     // Create a publisher to publish the brightness status 
-    // information on the topic "/brightness_status_custom"
+    // information on the topic "/brightness_status"
     brightness_status_publisher_ = this->create_publisher<example_interfaces::msg::String> 
         ("/brightness_status", 10);
 }

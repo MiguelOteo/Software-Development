@@ -185,7 +185,7 @@ const relbot_interfaces::msg::BoundingBox::SharedPtr BallDetection::ball_detecti
         return bounding_box_msg;
     }
 
-    // If ball is gound then
+    // If ball is found then
 
     // Calculate bounding box dimensions based on detected ball pixels
     int min_x = *std::min_element(ball_pixels_x.begin(), ball_pixels_x.end());
