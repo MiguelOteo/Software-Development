@@ -32,14 +32,6 @@ RELbotControl::RELbotControl() : Node("relbot_control")
     publisher_twist_ = this->create_publisher<geometry_msgs::msg::TwistStamped>
         ("/cmd_vel", 10);
 
-    // Create a publisher for the right motor angular velocity 
-    publisher_right_vel_ = this->create_publisher<example_interfaces::msg::Float64>
-        ("/input/right_motor/setpoint_vel", 10);
-
-    // Create a publisher for the left motor angular velocity 
-    publisher_left_vel_ = this->create_publisher<example_interfaces::msg::Float64>
-        ("/input/left_motor/setpoint_vel", 10);
-
     /// Image debug
     // Subscriber to \debug_image topic 
     debug_subscription_ = this->create_subscription<sensor_msgs::msg::Image>
@@ -87,12 +79,12 @@ void RELbotControl::control_callback(const relbot_interfaces::msg::BoundingBox::
         if(bounding_box->width >= bounding_box->height)
         {
             // If width is bigger then use it for size reference
-            size_error = reference_bounding_box.width - bounding_box->width;
+            size_error = bounding_box->width - reference_bounding_box.width;
         }
         else
         {
             // If height is bigger then use it for size reference
-            size_error = reference_bounding_box.height - bounding_box->height;
+            size_error =  bounding_box->height - reference_bounding_box.height;
         }
         
         // Calculate the error for the rotation
@@ -102,12 +94,6 @@ void RELbotControl::control_callback(const relbot_interfaces::msg::BoundingBox::
         double linear_velocity = linear_gain_ * size_error;
         double angular_velocity = angular_gain_ * center_error;
 
-        // Calculate target angular velocities for both wheels
-        double wheel_base = 0.5; // distance between the wheels (in meters)
-        double wheel_radius = 0.1; // radius of the wheels (in meters)
-        omega_left->data = (linear_velocity - (angular_velocity * wheel_base / 2)) / wheel_radius;
-        omega_right->data = (linear_velocity + (angular_velocity * wheel_base / 2)) / wheel_radius;
-
         // Add data to the TwistStamped message
         twist_msg->header.stamp = this->now();
         twist_msg->twist.linear.x = linear_velocity;
@@ -116,10 +102,6 @@ void RELbotControl::control_callback(const relbot_interfaces::msg::BoundingBox::
 
     // Publish TwistStamped message
     publisher_twist_->publish(*twist_msg);
-
-    // Publish individual motor commands (angular velocities)
-    publisher_right_vel_->publish(*omega_right);
-    publisher_left_vel_->publish(*omega_left);
 }
 
 /**

@@ -67,8 +67,6 @@ class RELbotControl: public rclcpp::Node
         /// Publisher variables.
         rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr publisher_twist_;
         rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr debug_image_publisher_;
-        rclcpp::Publisher<example_interfaces::msg::Float64>::SharedPtr publisher_right_vel_;
-        rclcpp::Publisher<example_interfaces::msg::Float64>::SharedPtr publisher_left_vel_;
 };
 
 #endif /* RELBOT_CONTROL_HPP */
