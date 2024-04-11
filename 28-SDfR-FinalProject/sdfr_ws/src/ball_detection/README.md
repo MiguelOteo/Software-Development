@@ -27,7 +27,7 @@ This package contains the one nodes for computing a bounding box around a detect
    # Set to True (default value) to enable the output on the topic \debug_image
    ros2 param set ball_detection debug_visualization <true or false>
    ```
-
+   
 - **Expected published topic**: If the node is running both topics should be visible
 
    ```bash

@@ -44,8 +44,8 @@ void DiffDriveController::compute_diff_velocities(const geometry_msgs::msg::Twis
     float angular_velocity = rebot_twists->twist.angular.z;
 
     // Calculate target angular velocities for both wheels
-    double wheel_base = 0.5; // distance between the wheels (in meters)
-    double wheel_radius = 0.1; // radius of the wheels (in meters)
+    double wheel_base = 0.209; // distance between the wheels (in meters)
+    double wheel_radius = 0.101; // radius of the wheels (in meters)
     omega_left->data = (linear_velocity - (angular_velocity * wheel_base / 2)) / wheel_radius;
     omega_right->data = (linear_velocity + (angular_velocity * wheel_base / 2)) / wheel_radius;
 

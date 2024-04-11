@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>relbot_ros2_driver</name>
+  <version>0.1.0</version>
+  <description>RELbot ICO ROS2 driver for the RELbot using the ICO board</description>
+  <maintainer email="j.j.hierck@student.utwente.nl">Jelle Hierck</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <depend>rclcpp</depend>
+  <depend>example_interfaces</depend>
+  <depend>geometry_msgs</depend>
+
+  <!-- Ros2Xeno and Xeno2Ros messages from xenomai4-framework -->
+  <depend>custom_msgs</depend>  
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

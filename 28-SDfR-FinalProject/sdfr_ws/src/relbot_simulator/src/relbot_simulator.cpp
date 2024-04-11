@@ -41,7 +41,7 @@ void RELbotSimulator::create_topics()
     RELbotSimulator::cmdVelSubscriber_ = create_subscription<geometry_msgs::msg::TwistStamped>(
         RELbotSimulator::CMD_VEL_TOPIC, rclcpp::SensorDataQoS().reliable(),
         std::bind(&RELbotSimulator::cmdVelCallback, this, std::placeholders::_1));
-    RCLCPP_INFO(get_logger(), "Subscribed to topic %s", RELbotSimulator::CMD_VEL_TOPIC.c_str());
+    RCLCPP_INFO(get_logger(), "Subscribed to topic %s", RELbotSimulator::CMD_ros2 run rqt_image_view rqt_image_viewVEL_TOPIC.c_str());
   }
   else
   {

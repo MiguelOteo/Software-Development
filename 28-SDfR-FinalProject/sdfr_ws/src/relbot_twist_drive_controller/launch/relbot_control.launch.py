@@ -27,7 +27,7 @@ def generate_launch_description():
             name='ball_detection',
                 parameters=[
                     # Set the command mode based on the launch argument
-                    {"debug_visualization": True},
+                    {"debug_visualization": False},
                 ],
         ),
 
@@ -38,7 +38,7 @@ def generate_launch_description():
             name='relbot_control',
                 parameters=[
                     # Set the command mode based on the launch argument
-                    {"debug_visualization": True},
+                    {"debug_visualization": False},
                 ],
         ),
     ])

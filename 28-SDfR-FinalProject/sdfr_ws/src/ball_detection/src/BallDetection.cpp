@@ -57,6 +57,8 @@ void BallDetection::ball_detection_callback(const sensor_msgs::msg::Image::Share
     // Get the number of threads of the system CPU
     const int num_threads = std::thread::hardware_concurrency();
 
+    RCLCPP_INFO_ONCE(this->get_logger(), "Using %d threads", num_threads);
+
     // Define a vector to hold all the thread objects
     std::vector<std::thread> thread_pool(num_threads);
 
