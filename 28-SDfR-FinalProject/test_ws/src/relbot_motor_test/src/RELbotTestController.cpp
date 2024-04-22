@@ -11,11 +11,11 @@ RELbotTestController::RELbotTestController() : Node("relbot_test_controller")
 {
     // Create a publisher for the right motor angular velocity 
     publisher_right_vel_ = this->create_publisher<example_interfaces::msg::Float64>
-        ("/input/right_motor/setpoint_vel", 10);
+        ("/right_motor/setpoint_vel", 10);
 
     // Create a publisher for the left motor angular velocity 
     publisher_left_vel_ = this->create_publisher<example_interfaces::msg::Float64>
-        ("/input/left_motor/setpoint_vel", 10);
+        ("/left_motor/setpoint_vel", 10);
 
     timer_ = this->create_wall_timer(
       500ms, std::bind(&RELbotTestController::timer_callback, this));

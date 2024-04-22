@@ -22,9 +22,9 @@
 std::tuple<float, float, float> RGBtoHSV(std::tuple<int, int, int>& RGB_color, int& pixel_brightness) 
 {
     // Convert RGB values to the range [0, 1]
-    float R = std::get<0>(RGB_color) / 255.0f;
+    float R = std::get<2>(RGB_color) / 255.0f;
     float G = std::get<1>(RGB_color) / 255.0f;
-    float B = std::get<2>(RGB_color) / 255.0f;
+    float B = std::get<0>(RGB_color) / 255.0f;
     float norm_brigthness = pixel_brightness / 255.0f;
 
     // Calculate maximum, minimum, and delta values

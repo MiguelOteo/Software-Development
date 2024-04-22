@@ -15,8 +15,8 @@ std::mutex mutex;
 // Hue [0-360] Red around 0 | Green at 120 | Blue at 240
 // Stauration [0-1]
 // Value [0-1]
-const float LOWER_BOUND_HSV[3] = {90, 0.4, 0.2};
-const float UPPER_BOUND_HSV[3] = {130, 1.0, 0.8};
+const float LOWER_BOUND_HSV[3] = {140, 0.3, 0.1};
+const float UPPER_BOUND_HSV[3] = {170, 1.0, 0.9};
 
 /**
  * @brief Detects pixels belonging to a ball within a specified image region.
