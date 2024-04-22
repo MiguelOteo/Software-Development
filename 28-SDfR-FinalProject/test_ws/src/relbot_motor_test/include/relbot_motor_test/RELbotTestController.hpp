@@ -12,10 +12,16 @@ class RELbotTestController: public rclcpp::Node
          */
         RELbotTestController();
 
+        /**
+         * @brief Callback to publish data 
+        */
+        void timer_callback();
+
     private:
         /// Publisher variables.
         rclcpp::Publisher<example_interfaces::msg::Float64>::SharedPtr publisher_right_vel_;
         rclcpp::Publisher<example_interfaces::msg::Float64>::SharedPtr publisher_left_vel_;
+        rclcpp::TimerBase::SharedPtr timer_;
 };
 
 #endif /* RELBOT_TEST_CONTROL_HPP */
