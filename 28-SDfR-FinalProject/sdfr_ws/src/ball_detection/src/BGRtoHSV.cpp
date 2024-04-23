@@ -1,17 +1,17 @@
 #include <tuple>
 #include <cmath>
 #include <algorithm>
-#include "../include/ros2_ball_detection/RGBtoHSV.hpp"
+#include "../include/ros2_ball_detection/BGRtoHSV.hpp"
 #include "image_functions_sdfr/image_functions.hpp"
 
 /**
- * @brief Converts an RGB color represented as integers to its corresponding HSV representation.
+ * @brief Converts an BGR color represented as integers to its corresponding HSV representation.
  * 
- * This function takes an RGB color represented as integers in the range [0, 255] and 
+ * This function takes an BGR color represented as integers in the range [0, 255] and 
  * converts it to its corresponding HSV (Hue, Saturation, Value) representation. The pixel 
  * brightness is also considered in the conversion process.
  *
- * @param RGB_color A tuple representing the RGB color values (R, G, B) where each 
+ * @param BGR_color A tuple representing the BGR color values (B, G, R) where each 
  *  component is an integer in the range [0, 255].
  * @param pixel_brightness An integer representing the brightness of the pixel in 
  *  the range [0, 255].
@@ -19,12 +19,12 @@
  * @return A tuple representing the HSV color values (H, S, V) where H is the hue in degrees (0-360), S is the 
  *         saturation (0-1), and V is the value (brightness) normalized to the range [0, 1].
  */
-std::tuple<float, float, float> RGBtoHSV(std::tuple<int, int, int>& RGB_color, int& pixel_brightness) 
+std::tuple<float, float, float> BGRtoHSV(std::tuple<int, int, int>& BGR_color, int& pixel_brightness) 
 {
-    // Convert RGB values to the range [0, 1]
-    float R = std::get<2>(RGB_color) / 255.0f;
-    float G = std::get<1>(RGB_color) / 255.0f;
-    float B = std::get<0>(RGB_color) / 255.0f;
+    // Convert BGR values to the range [0, 1]
+    float R = std::get<2>(BGR_color) / 255.0f;
+    float G = std::get<1>(BGR_color) / 255.0f;
+    float B = std::get<0>(BGR_color) / 255.0f;
     float norm_brigthness = pixel_brightness / 255.0f;
 
     // Calculate maximum, minimum, and delta values

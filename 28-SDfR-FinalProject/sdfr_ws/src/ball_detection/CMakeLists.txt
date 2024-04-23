@@ -18,7 +18,7 @@ include_directories(include)
 # Add executable
 add_executable(ball_detection 
   src/BallDetection.cpp
-  src/RGBtoHSV.cpp
+  src/BGRtoHSV.cpp
   src/BoundingBoxDetection.cpp
 )
 

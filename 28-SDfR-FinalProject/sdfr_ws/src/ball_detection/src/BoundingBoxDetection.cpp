@@ -5,7 +5,7 @@
 #include "sensor_msgs/msg/image.hpp"
 #include "relbot_interfaces/msg/bounding_box.hpp"
 #include "image_functions_sdfr/image_functions.hpp"
-#include "../include/ros2_ball_detection/RGBtoHSV.hpp"
+#include "../include/ros2_ball_detection/BGRtoHSV.hpp"
 #include "../include/ros2_ball_detection/BoundingBoxDetection.hpp"
 
 // Define a mutex for synchronization
@@ -54,7 +54,7 @@ void ball_pixels_detection
             int pixel_brightness = image_functions::getPixelBrightness(image, x, y);
 
             // Convert the RGB space into HSV space for image segmentation
-            std::tuple<float, float, float> HSV_color = RGBtoHSV(pixel_channels, pixel_brightness);
+            std::tuple<float, float, float> HSV_color = BGRtoHSV(pixel_channels, pixel_brightness);
 
             // HSV components of the pixel
             float hue = std::get<0>(HSV_color);

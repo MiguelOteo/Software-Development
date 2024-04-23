@@ -7,7 +7,7 @@
 #include "sensor_msgs/image_encodings.hpp"
 #include "image_functions_sdfr/image_functions.hpp"
 #include "../include/ros2_ball_detection/BallDetection.hpp"
-#include "../include/ros2_ball_detection/RGBtoHSV.hpp"
+#include "../include/ros2_ball_detection/BGRtoHSV.hpp"
 #include "../include/ros2_ball_detection/BoundingBoxDetection.hpp"
 
 // Define the color for ball detection and drawn squares
