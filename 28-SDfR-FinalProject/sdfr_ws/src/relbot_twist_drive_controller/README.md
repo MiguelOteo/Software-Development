@@ -25,7 +25,7 @@ This package contains the the node to compute the twist pair output based on the
 
    ```bash
    # Set to True (default value) to enable the output on the topic \debug_image_control
-   ros2 param set ball_detection debug_visualization <true or false>
+   ros2 param set relbot_control debug_visualization <true or false>
    ```
    
 - **Parameters**: The node has different parameters that can be use to adjust the RELbot behaviour:
