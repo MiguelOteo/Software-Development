@@ -24,7 +24,7 @@ This package contains the the node to compute the twist pair output based on the
 - **Debug Parameters**: The node has a debug image funtion which can be turn on and off using:
 
    ```bash
-   # Set to True (default value) to enable the output on the topic \debug_image
+   # Set to True (default value) to enable the output on the topic \debug_image_control
    ros2 param set ball_detection debug_visualization <true or false>
    ```
    
