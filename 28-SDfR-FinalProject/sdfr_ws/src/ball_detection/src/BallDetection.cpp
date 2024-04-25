@@ -137,7 +137,7 @@ void BallDetection::publish_debug_image
     // Draw a bounding box on the debug image
     for (int x = min_x; x < max_x; x++)
     {
-        // If first or last column then draw only top and bottom lines
+        // If not first or last column then draw only top and bottom lines
         if(x != min_x && x != max_x-1)
         {
             image_functions::setPixelColor(debug_image, x, min_y, RGB_BOX[2], RGB_BOX[1], RGB_BOX[0]);
