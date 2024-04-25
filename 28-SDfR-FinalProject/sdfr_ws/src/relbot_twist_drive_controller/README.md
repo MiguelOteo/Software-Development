@@ -21,8 +21,15 @@ This package contains the the node to compute the twist pair output based on the
    ros2 launch relbot_twist_drive_controller relbot_control.launch.py
    ```
 
-- **Parameters**: The node has a debug image funtion which can be turn on and off using:
+- **Debug Parameters**: The node has a debug image funtion which can be turn on and off using:
 
+   ```bash
+   # Set to True (default value) to enable the output on the topic \debug_image
+   ros2 param set ball_detection debug_visualization <true or false>
+   ```
+   
+- **Parameters**: The node has different parameters that can be use to adjust the RELbot behaviour:
+- 
    Change the ball size that will be use as the objective to match in the detected object
    ```bash
    # Change the size of the ball
