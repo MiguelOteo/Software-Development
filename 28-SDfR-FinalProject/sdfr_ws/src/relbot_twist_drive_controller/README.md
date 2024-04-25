@@ -29,7 +29,7 @@ This package contains the the node to compute the twist pair output based on the
    ```
    
 - **Parameters**: The node has different parameters that can be use to adjust the RELbot behaviour:
-- 
+  
    Change the ball size that will be use as the objective to match in the detected object
    ```bash
    # Change the size of the ball
